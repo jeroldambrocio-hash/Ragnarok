@@ -1,0 +1,131 @@
+---
+import SampleBadge from "./SampleBadge.astro";
+import Icon from "./Icon.astro";
+import { realms, schedule } from "../data/woe";
+const days = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+---
+<section id="woe" class="woe" aria-labelledby="woe-title">
+  <div class="woe-bg" aria-hidden="true">
+    <svg viewBox="0 0 1600 500" preserveAspectRatio="xMidYMax slice">
+      <g fill="#0b0809">
+        <path d="M0 500V380h60v-40h30v40h40v-70l35-60 35 60v70h50v-30h30v30h60V500z" />
+        <path d="M1600 500V360h-50v-40h-30v40h-40v-90l-40-70-40 70v90h-60v-30h-30v30h-70V500z" />
+      </g>
+    </svg>
+  </div>
+  <div class="wrap woe-inner">
+    <header class="woe-head">
+      <h2 id="woe-title">War of Emperium</h2>
+      <p class="woe-quote">Lucha por tu guild.<br />Conquista tu castillo.</p>
+    </header>
+
+    <div class="woe-grid">
+      <div class="woe-next" data-woe data-schedule={JSON.stringify(schedule.sessions)}>
+        <div class="woe-next-head">
+          <h3 class="mini-title">Próxima WoE</h3>
+          <SampleBadge label="Horario de ejemplo" />
+        </div>
+        <p class="woe-when" data-woe-when>—</p>
+        <div class="countdown" role="timer" aria-live="off" data-woe-countdown>
+          <div><span data-u="d">--</span><small>días</small></div>
+          <div><span data-u="h">--</span><small>horas</small></div>
+          <div><span data-u="m">--</span><small>min</small></div>
+          <div><span data-u="s">--</span><small>seg</small></div>
+        </div>
+        <ul class="schedule">
+          {schedule.sessions.map((s) => (
+            <li><span>{days[s.day]}</span><span class="num">{s.start} – {s.end}</span></li>
+          ))}
+        </ul>
+        <a class="woe-link" href="#rankings" data-tab-link="guilds">Ver ranking de guilds <Icon name="arrow" size={16} /></a>
+      </div>
+
+      <div class="realms">
+        <h3 class="mini-title">Castillos</h3>
+        <ul class="realm-list">
+          {realms.map((r) => (
+            <li class="realm">
+              <div class="realm-head">
+                <span class="realm-name">{r.realm}</span>
+                <span class="realm-town">{r.town}</span>
+              </div>
+              <ul class="castles">
+                {r.castles.map((c) => (
+                  <li><span>{c}</span><span class="owner">Sin conquistar</span></li>
+                ))}
+              </ul>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import "../scripts/woe.ts";
+</script>
+
+<style>
+  .woe {
+    position: relative;
+    margin-top: clamp(5rem, 11vw, 9rem);
+    padding-block: clamp(4.5rem, 9vw, 7rem);
+    background:
+      radial-gradient(80% 60% at 50% 0%, rgba(194, 58, 69, 0.22), rgba(194, 58, 69, 0) 70%),
+      linear-gradient(180deg, #150c0e 0%, #120a0c 70%, var(--bg) 100%);
+    border-block: 1px solid rgba(194, 58, 69, 0.25);
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .woe-bg { position: absolute; inset: auto 0 0 0; height: 60%; z-index: -1; opacity: 0.9; }
+  .woe-bg svg { width: 100%; height: 100%; max-width: none; }
+
+  .woe-head { max-width: 40rem; }
+  .woe-head h2 {
+    font: 400 clamp(2.6rem, 7vw, 5rem)/0.95 var(--display);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+  .woe-quote { margin-top: 1.25rem; font: 400 clamp(1.2rem, 2.2vw, 1.6rem)/1.35 var(--display); color: var(--text-2); }
+
+  .woe-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.4fr);
+    gap: clamp(2rem, 5vw, 5rem);
+    margin-top: clamp(2.5rem, 5vw, 4rem);
+  }
+  .woe-next-head { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+  .woe-when { margin-top: 1rem; color: var(--text-2); }
+  .countdown { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; margin-top: 0.75rem; }
+  .countdown div { display: flex; flex-direction: column; padding: 0.9rem 0; border-top: 2px solid var(--crimson); }
+  .countdown span { font: 400 clamp(2rem, 4vw, 2.75rem)/1 var(--display); font-variant-numeric: tabular-nums; }
+  .countdown small { margin-top: 0.35rem; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); }
+  .schedule { margin: 1.5rem 0 0; padding: 0; list-style: none; }
+  .schedule li { display: flex; justify-content: space-between; padding: 0.7rem 0; border-bottom: 1px solid rgba(236, 231, 221, 0.08); color: var(--text-2); }
+  .schedule li span:first-child { color: var(--text); }
+  .woe-link {
+    display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 1.5rem;
+    font-weight: 600; color: var(--gold); text-decoration: none;
+  }
+  .woe-link svg { transition: transform var(--fast) var(--ease-out); }
+  .woe-link:hover svg { transform: translateX(3px); }
+
+  .realm-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.75rem 2rem; margin: 1.25rem 0 0; padding: 0; list-style: none; }
+  .realm-head { display: flex; align-items: baseline; justify-content: space-between; gap: 0.5rem; padding-bottom: 0.6rem; border-bottom: 1px solid rgba(194, 58, 69, 0.35); }
+  .realm-name { font: 400 1.2rem/1.2 var(--display); }
+  .realm-town { font-size: 0.8125rem; color: var(--text-3); }
+  .castles { margin: 0; padding: 0; list-style: none; }
+  .castles li {
+    display: flex; justify-content: space-between; gap: 0.5rem;
+    padding: 0.5rem 0;
+    font-size: 0.9375rem;
+    border-bottom: 1px solid rgba(236, 231, 221, 0.06);
+    transition: color var(--fast), padding-left 200ms var(--ease-out);
+  }
+  .castles li:hover { padding-left: 0.35rem; }
+  .owner { color: var(--text-3); font-size: 0.8125rem; }
+
+  @media (max-width: 900px) { .woe-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 560px) { .realm-list { grid-template-columns: 1fr; } }
+</style>

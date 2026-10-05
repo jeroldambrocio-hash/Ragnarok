@@ -1,0 +1,75 @@
+---
+/**
+ * One button vocabulary for the whole site.
+ * - href set: renders a real link.
+ * - href empty and `pending` set: renders a disabled button that says why.
+ */
+import Icon from "./Icon.astro";
+interface Props {
+  href?: string;
+  variant?: "primary" | "secondary" | "ghost";
+  size?: "md" | "lg";
+  icon?: string;
+  pending?: string;
+  external?: boolean;
+  type?: "button" | "submit";
+  class?: string;
+  [key: string]: unknown;
+}
+const { href, variant = "secondary", size = "md", icon, pending, external, type = "button", class: cls, ...rest } = Astro.props;
+const classes = ["btn", `btn--${variant}`, `btn--${size}`, cls].filter(Boolean).join(" ");
+---
+{href ? (
+  <a class={classes} href={href} {...(external ? { target: "_blank", rel: "noopener" } : {})} {...rest}>
+    {icon && <Icon name={icon} size={18} />}<span><slot /></span>
+  </a>
+) : pending ? (
+  <span class="btn-pending">
+    <button class={classes} type="button" disabled {...rest}>{icon && <Icon name={icon} size={18} />}<span><slot /></span></button>
+    <span class="btn-note">{pending}</span>
+  </span>
+) : (
+  <button class={classes} type={type} {...rest}>{icon && <Icon name={icon} size={18} />}<span><slot /></span></button>
+)}
+
+<style is:global>
+  .btn {
+    --pad-y: 0.7rem;
+    --pad-x: 1.15rem;
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.55rem;
+    min-height: 2.75rem;
+    padding: var(--pad-y) var(--pad-x);
+    font: 600 0.9375rem/1.1 var(--sans);
+    letter-spacing: 0.01em;
+    color: var(--text);
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    background: none;
+    cursor: pointer;
+    transition: transform var(--fast) var(--ease-out), background-color var(--fast), border-color var(--fast), color var(--fast), box-shadow var(--fast);
+    -webkit-tap-highlight-color: transparent;
+  }
+  .btn:hover { transform: scale(1.02); }
+  .btn:active { transform: scale(0.98); transition-duration: 60ms; }
+  .btn--lg { --pad-y: 0.9rem; --pad-x: 1.6rem; min-height: 3.25rem; font-size: 1rem; }
+
+  .btn--primary {
+    color: var(--gold-ink);
+    background: var(--gold);
+    box-shadow: 0 8px 24px -10px rgba(212, 176, 106, 0.55);
+  }
+  .btn--primary:hover { background: var(--gold-hi); box-shadow: 0 10px 28px -10px rgba(232, 204, 143, 0.7); }
+
+  .btn--secondary { border-color: var(--line-strong); background: rgba(11, 12, 15, 0.35); }
+  .btn--secondary:hover { border-color: rgba(236, 231, 221, 0.45); background: rgba(236, 231, 221, 0.06); }
+
+  .btn--ghost { padding-inline: 0.5rem; color: var(--text-2); }
+  .btn--ghost:hover { color: var(--text); }
+
+  .btn:disabled { cursor: not-allowed; opacity: 0.55; transform: none; box-shadow: none; }
+  .btn--primary:disabled { background: var(--surface-2); color: var(--text-2); }
+
+  .btn-pending { display: inline-flex; flex-direction: column; align-items: flex-start; gap: 0.4rem; }
+  .btn-note { font-size: 0.8125rem; color: var(--text-3); }
+</style>

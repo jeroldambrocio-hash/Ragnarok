@@ -1,0 +1,111 @@
+@font-face {
+  font-family: "Faculty Glyphic";
+  src: url("../fonts/faculty-glyphic-latin-400-normal.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face { font-family: "Onest"; src: url("../fonts/onest-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Onest"; src: url("../fonts/onest-latin-500-normal.woff2") format("woff2"); font-weight: 500; font-display: swap; }
+@font-face { font-family: "Onest"; src: url("../fonts/onest-latin-600-normal.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+@font-face { font-family: "Onest"; src: url("../fonts/onest-latin-700-normal.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+
+:root {
+  /* Night charcoal ground and graphite planes */
+  --bg: #0b0c0f;
+  --bg-2: #101217;
+  --surface: #161920;
+  --surface-2: #1d2029;
+  --line: rgba(236, 231, 221, 0.1);
+  --line-strong: rgba(236, 231, 221, 0.2);
+
+  /* Off-white text */
+  --text: #ece7dd;
+  --text-2: #b4afa5;
+  --text-3: #8a867e;
+
+  /* Gold: primary action, key numerals, focus. Crimson: WoE and live only. */
+  --gold: #d4b06a;
+  --gold-hi: #e8cc8f;
+  --gold-ink: #17130a;
+  --crimson: #c23a45;
+  --crimson-deep: #3a1216;
+  --online: #6cc58a;
+
+  --display: "Faculty Glyphic", "Iowan Old Style", Georgia, serif;
+  --sans: "Onest", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --gutter: clamp(1.25rem, 5vw, 4.5rem);
+  --max: 76rem;
+  --nav-h: 4rem;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --fast: 160ms;
+
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--nav-h) + 1rem);
+  scrollbar-color: #3a3c44 var(--bg);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 400 1rem/1.65 var(--sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  caret-color: var(--gold);
+}
+
+::selection { background: var(--gold); color: var(--gold-ink); }
+
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: #34363e; border-radius: 5px; border: 2px solid var(--bg); }
+
+img, svg, canvas { display: block; max-width: 100%; }
+
+a { color: inherit; text-underline-offset: 0.2em; text-decoration-thickness: 1px; }
+
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+h1, h2, h3 { font-weight: 400; margin: 0; text-wrap: balance; }
+
+p { margin: 0; text-wrap: pretty; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip-path: inset(50%); white-space: nowrap;
+}
+
+.wrap {
+  width: 100%;
+  max-width: calc(var(--max) + var(--gutter) * 2);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.skip-link {
+  position: fixed; left: 1rem; top: -5rem; z-index: 100;
+  padding: 0.6rem 1rem; border-radius: 6px;
+  background: var(--gold); color: var(--gold-ink); font-weight: 600; text-decoration: none;
+}
+.skip-link:focus { top: 1rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

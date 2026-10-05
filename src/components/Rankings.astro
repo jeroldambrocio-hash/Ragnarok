@@ -1,0 +1,101 @@
+---
+import Section from "./Section.astro";
+import SampleBadge from "./SampleBadge.astro";
+import { characters, guilds, mvps } from "../data/rankings";
+const tabs = [
+  { id: "personajes", label: "Personajes" },
+  { id: "guilds", label: "Guilds" },
+  { id: "mvp", label: "MVP" },
+];
+---
+<Section id="rankings" title="Rankings" lede="Los mejores de Rune-Midgard, actualizados desde el servidor.">
+  <SampleBadge slot="aside" label="Vista previa · datos de ejemplo" />
+  <div class="rk" data-tabs>
+    <div class="rk-tabs" role="tablist" aria-label="Tipo de ranking">
+      {tabs.map((t, i) => (
+        <button type="button" role="tab" id={`tab-${t.id}`} aria-controls={`panel-${t.id}`} aria-selected={i === 0 ? "true" : "false"} tabindex={i === 0 ? 0 : -1} data-tab={t.id}>{t.label}</button>
+      ))}
+      <span class="rk-ink" aria-hidden="true"></span>
+    </div>
+
+    <div class="rk-panel" role="tabpanel" id="panel-personajes" aria-labelledby="tab-personajes" tabindex="0">
+      <table>
+        <thead><tr><th scope="col">#</th><th scope="col">Personaje</th><th scope="col">Clase</th><th scope="col" class="r">Nivel</th></tr></thead>
+        <tbody>
+          {characters.map((c, i) => (
+            <tr><td class="pos">{i + 1}</td><th scope="row">{c.name}</th><td class="muted">{c.job}</td><td class="r num">{c.level}</td></tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <div class="rk-panel" role="tabpanel" id="panel-guilds" aria-labelledby="tab-guilds" tabindex="0" hidden>
+      <table>
+        <thead><tr><th scope="col">#</th><th scope="col">Guild</th><th scope="col">Líder</th><th scope="col" class="r">Castillos</th><th scope="col" class="r hide-sm">Miembros</th></tr></thead>
+        <tbody>
+          {guilds.map((g, i) => (
+            <tr><td class="pos">{i + 1}</td><th scope="row">{g.name}</th><td class="muted">{g.leader}</td><td class="r num">{g.castles}</td><td class="r num hide-sm">{g.members}</td></tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <div class="rk-panel" role="tabpanel" id="panel-mvp" aria-labelledby="tab-mvp" tabindex="0" hidden>
+      <table>
+        <thead><tr><th scope="col">#</th><th scope="col">Personaje</th><th scope="col">Último MVP</th><th scope="col" class="r">MVPs</th></tr></thead>
+        <tbody>
+          {mvps.map((m, i) => (
+            <tr><td class="pos">{i + 1}</td><th scope="row">{m.name}</th><td class="muted">{m.last}</td><td class="r num">{m.kills}</td></tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</Section>
+
+<script>
+  import "../scripts/tabs.ts";
+</script>
+
+<style>
+  .rk-tabs { position: relative; display: inline-flex; gap: 0.25rem; padding: 0.25rem; background: var(--bg-2); border: 1px solid var(--line); border-radius: 10px; }
+  .rk-tabs button {
+    position: relative; z-index: 1;
+    min-height: 2.5rem; padding: 0.5rem 1.1rem;
+    font: 600 0.875rem/1 var(--sans); letter-spacing: 0.02em;
+    color: var(--text-2); background: none; border: 0; border-radius: 7px; cursor: pointer;
+    transition: color var(--fast);
+  }
+  .rk-tabs button:hover { color: var(--text); }
+  .rk-tabs button[aria-selected="true"] { color: var(--gold-ink); }
+  .rk-ink {
+    position: absolute; z-index: 0; top: 0.25rem; bottom: 0.25rem; left: 0;
+    width: var(--w, 0); transform: translateX(var(--x, 0));
+    background: var(--gold); border-radius: 7px;
+    transition: transform 260ms var(--ease-out), width 260ms var(--ease-out);
+  }
+
+  .rk-panel { margin-top: 1.5rem; }
+  .rk-panel:focus-visible { outline-offset: 6px; }
+  table { width: 100%; border-collapse: collapse; font-size: 1rem; }
+  thead th {
+    padding: 0 1rem 0.75rem 0;
+    font: 600 0.75rem/1 var(--sans); letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--text-3); text-align: left;
+    border-bottom: 1px solid var(--line-strong);
+  }
+  tbody tr { transition: background-color var(--fast); }
+  tbody tr:hover { background: rgba(236, 231, 221, 0.03); }
+  tbody td, tbody th { padding: 1rem 1rem 1rem 0; border-bottom: 1px solid var(--line); text-align: left; }
+  tbody th { font-weight: 600; }
+  .pos { width: 3rem; font: 400 1.25rem/1 var(--display); color: var(--text-3); font-variant-numeric: tabular-nums; }
+  tbody tr:first-child .pos { color: var(--gold); font-size: 1.6rem; }
+  .muted { color: var(--text-2); }
+  .r { text-align: right !important; padding-right: 0 !important; }
+  .num { font-variant-numeric: tabular-nums; }
+
+  @media (max-width: 560px) {
+    .rk-tabs { display: flex; width: 100%; }
+    .rk-tabs button { flex: 1; padding-inline: 0.5rem; }
+    .hide-sm { display: none; }
+    tbody td, tbody th { padding-block: 0.85rem; font-size: 0.9375rem; }
+  }
+</style>

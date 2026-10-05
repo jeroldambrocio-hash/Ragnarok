@@ -1,0 +1,30 @@
+---
+import Base from "../layouts/Base.astro";
+import Navbar from "../components/Navbar.astro";
+import Hero from "../components/Hero.astro";
+import ServerStatus from "../components/ServerStatus.astro";
+import WhyPlay from "../components/WhyPlay.astro";
+import Woe from "../components/Woe.astro";
+import Rankings from "../components/Rankings.astro";
+import Download from "../components/Download.astro";
+import Register from "../components/Register.astro";
+import Community from "../components/Community.astro";
+import Footer from "../components/Footer.astro";
+---
+<Base
+  title="Ragnarok Forever · Servidor clásico pre-renewal 5x"
+  description="Ragnarok Forever: servidor privado de Ragnarok Online clásico, pre-renewal, rates 5x y War of Emperium semanal. Crea tu cuenta y juega."
+>
+  <Navbar />
+  <main id="contenido">
+    <Hero />
+    <ServerStatus />
+    <WhyPlay />
+    <Woe />
+    <Rankings />
+    <Download />
+    <Register />
+    <Community />
+  </main>
+  <Footer />
+</Base>

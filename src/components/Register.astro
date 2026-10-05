@@ -1,0 +1,86 @@
+---
+import { config } from "../config";
+---
+<section id="registro" class="reg" aria-labelledby="registro-title">
+  <div class="wrap reg-inner">
+    <div class="reg-copy">
+      <h2 id="registro-title">Crea tu cuenta</h2>
+      <p>Tres datos y listo. Menos de un minuto.</p>
+    </div>
+    <form class="reg-form" data-register data-endpoint={config.registerEndpoint} novalidate>
+      <div class="field">
+        <label for="r-user">Usuario</label>
+        <input id="r-user" name="usuario" autocomplete="username" required minlength="4" maxlength="23" pattern="[A-Za-z0-9_]+" aria-describedby="r-user-hint" />
+        <p class="hint" id="r-user-hint">4 a 23 letras, números o _</p>
+      </div>
+      <div class="field">
+        <label for="r-mail">Correo</label>
+        <input id="r-mail" name="correo" type="email" autocomplete="email" required />
+      </div>
+      <div class="field">
+        <label for="r-pass">Contraseña</label>
+        <input id="r-pass" name="clave" type="password" autocomplete="new-password" required minlength="6" aria-describedby="r-pass-hint" />
+        <p class="hint" id="r-pass-hint">Mínimo 6 caracteres</p>
+      </div>
+      <fieldset class="field sex">
+        <legend>Personaje</legend>
+        <div class="seg">
+          <label><input type="radio" name="sexo" value="M" checked /><span>Masculino</span></label>
+          <label><input type="radio" name="sexo" value="F" /><span>Femenino</span></label>
+        </div>
+      </fieldset>
+      <p class="reg-msg" role="status" aria-live="polite"></p>
+      <button class="btn btn--primary btn--lg reg-submit" type="submit"><span>Crear cuenta</span></button>
+    </form>
+  </div>
+</section>
+
+<script>
+  import "../scripts/register.ts";
+</script>
+
+<style>
+  .reg { padding-block: clamp(5rem, 11vw, 9rem) 0; }
+  .reg-inner {
+    display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: clamp(2rem, 5vw, 5rem);
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--line);
+  }
+  .reg-copy h2 { font: 400 clamp(2.1rem, 4.6vw, 3.5rem)/1.05 var(--display); }
+  .reg-copy p { margin-top: 0.75rem; color: var(--text-2); font-size: 1.0625rem; }
+
+  .reg-form { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem 1.25rem; align-items: start; }
+  .field { display: grid; gap: 0.4rem; min-width: 0; margin: 0; padding: 0; border: 0; }
+  .field label, .field legend { font-size: 0.875rem; font-weight: 500; color: var(--text-2); padding: 0; }
+  .field input:not([type="radio"]) {
+    width: 100%; min-height: 3rem;
+    padding: 0.7rem 0.9rem;
+    font: 400 1rem/1.3 var(--sans); color: var(--text);
+    background: var(--bg-2);
+    border: 1px solid var(--line-strong);
+    border-radius: 8px;
+    transition: border-color var(--fast), background-color var(--fast);
+  }
+  .field input:hover { border-color: rgba(236, 231, 221, 0.32); }
+  .field input:focus-visible { outline: none; border-color: var(--gold); background: var(--surface); box-shadow: 0 0 0 3px rgba(212, 176, 106, 0.18); }
+  .field input[aria-invalid="true"] { border-color: var(--crimson); }
+  .hint { font-size: 0.8125rem; color: var(--text-3); }
+
+  .seg { display: grid; grid-template-columns: 1fr 1fr; padding: 0.25rem; min-height: 3rem; background: var(--bg-2); border: 1px solid var(--line-strong); border-radius: 8px; }
+  .seg label { position: relative; display: grid; cursor: pointer; }
+  .seg input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+  .seg span { display: grid; place-items: center; border-radius: 6px; font-size: 0.9375rem; color: var(--text-2); transition: background-color var(--fast), color var(--fast); }
+  .seg input:checked + span { background: var(--surface-2); color: var(--text); }
+  .seg input:focus-visible + span { outline: 2px solid var(--gold); outline-offset: 1px; }
+
+  .reg-msg { grid-column: 1 / -1; font-size: 0.9375rem; }
+  .reg-msg:empty { display: none; }
+  .reg-msg[data-kind="error"] { color: #ec8b93; }
+  .reg-msg[data-kind="ok"] { padding: 0.8rem 1rem; border: 1px solid rgba(212, 176, 106, 0.35); border-radius: 8px; color: var(--text); }
+  .reg-submit { grid-column: 1 / -1; justify-self: start; }
+  .reg-submit[aria-busy="true"] { opacity: 0.7; cursor: progress; }
+
+  @media (max-width: 900px) { .reg-inner { grid-template-columns: 1fr; } }
+  @media (max-width: 560px) { .reg-form { grid-template-columns: 1fr; } .reg-submit { justify-self: stretch; } }
+</style>

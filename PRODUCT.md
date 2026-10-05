@@ -8,7 +8,7 @@ web
 
 ## Stack
 
-delegated: static HTML/CSS with a little vanilla JS. The owner is new to GitHub and web tooling, so no build step; it can be hosted free (GitHub Pages / Netlify) by uploading the files.
+Astro (static output) with small vanilla TypeScript islands, deployed to GitHub Pages by a GitHub Actions workflow. Chosen 2026-10-05 when the owner asked for reusable components (Navbar, Hero, Novice, ServerStatus, Ranking, WoE, Download, Discord, Footer) and code splitting. Earlier version was plain static HTML.
 
 ## Users
 
@@ -25,16 +25,21 @@ Classic pre-renewal Ragnarok Online with 5x/5x/5x rates (base / job / drop). Und
 ## Capabilities and Constraints
 
 - Confirmed: server name "Ragnarok Forever"; pre-renewal; rates 5x base, 5x job, 5x drop.
-- The site's core actions are register account and download client. No backend exists yet: forms and download links are placeholders until the owner provides real URLs.
+- The site's core actions are register account (primary "Jugar ahora"), download client, and join Discord. No backend exists yet: register endpoint, download URL, Discord invite, server status API, rankings and WoE schedule are not available. Everything that needs them is driven by `src/config.ts` and `src/data/`, shows clearly-marked sample data or a disabled "Próximamente" state, and never a fake working button.
+- War of Emperium is a featured part of the server (owner brief, 2026-10-05). Castle list, schedule and guild owners are not confirmed.
+- Owner-approved provisional features (2026-10-05, "de momento invéntatelo todo"): anti-cheat, regular updates, no pay-to-win, balanced gameplay, MVP rate 5x. Present them as features; revisit when the owner has real details.
+- Still unconfirmed: episode number, castle availability, WoE schedule, client version and size. Live data (status, players, uptime, rankings) stays labelled sample until an API exists.
 - Language: Spanish.
 
 ## Brand Commitments
 
 Name: Ragnarok Forever. No logo, art, or voice guide exists yet.
 
+Owner brief (2026-10-05), binding: a modern 2026 game website, not an old private-server page. Minimal, clean, elegant, immersive, fast. Palette: black/charcoal, dark grey, off-white, very subtle gold for highlights/primary actions, at most one Ragnarok-inspired accent. Hero background inspired by a War of Emperium battle scene, cinematic, layered, subtle motion, never hurting legibility. Animated Novice characters act as navigation and must feel integrated and elegant, not childish. Display type may be slightly fantasy; body text modern and highly legible. No cluttered UI, banners, many colours, giant buttons, gratuitous effects, heavy borders or gradients.
+
 ## Evidence on Hand
 
-None. No player counts, uptime, launch date, screenshots, testimonials, Discord link, or download URL exist. Future work must not fabricate online-player numbers, reviews, or launch dates; any illustrative figure must be labelled as an example.
+None, and no image assets of any kind (no WoE art, no Novice sprites). No player counts, uptime, launch date, screenshots, testimonials, Discord link, or download URL exist. Future work must not fabricate online-player numbers, reviews, or launch dates; any illustrative figure must be labelled as an example.
 
 ## Product Principles
 
@@ -42,3 +47,4 @@ None. No player counts, uptime, launch date, screenshots, testimonials, Discord 
 2. Make "create account" and "download" impossible to miss.
 3. Nostalgia earns attention; honesty earns trust. Never fake activity.
 4. Readable on a phone: many visitors come from Discord links on mobile.
+5. A classic server presented like a modern product: recognisably Ragnarok, never dated.
