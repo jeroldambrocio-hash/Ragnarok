@@ -2,6 +2,7 @@
 import SampleBadge from "./SampleBadge.astro";
 import Icon from "./Icon.astro";
 import { realms, schedule } from "../data/woe";
+const art = `${import.meta.env.BASE_URL.replace(/\/$/, "")}/art/emperium.webp`;
 const days = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
 ---
 <section id="woe" class="woe" aria-labelledby="woe-title">
@@ -14,10 +15,17 @@ const days = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "
     </svg>
   </div>
   <div class="wrap woe-inner">
-    <header class="woe-head">
-      <h2 id="woe-title">War of Emperium</h2>
-      <p class="woe-quote">Lucha por tu guild.<br />Conquista tu castillo.</p>
-    </header>
+    <div class="woe-top">
+      <header class="woe-head">
+        <h2 id="woe-title">War of Emperium</h2>
+        <p class="woe-quote">Lucha por tu guild.<br />Conquista tu castillo.</p>
+      </header>
+      <figure class="woe-art">
+        <img src={art} width="290" height="400" loading="lazy" decoding="async"
+          alt="Arte oficial de Ragnarok Online: un grupo de aventureros alrededor del Emperium dorado." />
+        <figcaption>Arte oficial de Ragnarok Online © Gravity</figcaption>
+      </figure>
+    </div>
 
     <div class="woe-grid">
       <div class="woe-next" data-woe data-schedule={JSON.stringify(schedule.sessions)}>
@@ -86,7 +94,16 @@ const days = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "
   .woe-bg { position: absolute; inset: auto 0 0 0; height: 60%; z-index: -1; opacity: 0.9; }
   .woe-bg svg { width: 100%; height: 100%; max-width: none; }
 
+  .woe-top { display: flex; justify-content: space-between; align-items: flex-end; gap: 2rem; }
   .woe-head { max-width: 40rem; }
+  .woe-art { margin: 0; flex: none; width: clamp(11rem, 20vw, 15rem); }
+  .woe-art img {
+    width: 100%; height: auto; aspect-ratio: 290 / 400; object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid rgba(212, 176, 106, 0.35);
+    box-shadow: 0 0 0 4px rgba(11, 12, 15, 0.6), 0 18px 50px rgba(194, 58, 69, 0.25);
+  }
+  .woe-art figcaption { margin-top: 0.5rem; font-size: 0.75rem; color: var(--text-3); text-align: right; }
   .woe-head h2 {
     font: 400 clamp(2.6rem, 7vw, 5rem)/0.95 var(--display);
     text-transform: uppercase;
@@ -134,5 +151,10 @@ const days = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "
   .owner { color: var(--text-3); font-size: 0.8125rem; }
 
   @media (max-width: 900px) { .woe-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 640px) {
+    .woe-top { flex-direction: column; align-items: stretch; }
+    .woe-art { width: 100%; }
+    .woe-art img { aspect-ratio: 4 / 3; object-position: 50% 45%; }
+  }
   @media (max-width: 560px) { .realm-list { grid-template-columns: 1fr; } }
 </style>

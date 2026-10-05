@@ -1,16 +1,17 @@
 ---
 import WoeScene from "./WoeScene.astro";
-import Novice from "./Novice.astro";
+import Character from "./Character.astro";
 import Button from "./Button.astro";
 import { config } from "../config";
 
+// Each section has a classic first job as its guide.
 const left = [
-  { href: "#servidor", label: "Servidor", icon: "server", hair: "#6b3f22", delay: 0, facing: "right" as const },
-  { href: "#woe", label: "WoE", icon: "castle", hair: "#1f1a1c", delay: -1.4, facing: "right" as const },
+  { href: "#servidor", label: "Servidor", icon: "server", sprite: "novice", job: "Novice", delay: 0 },
+  { href: "#woe", label: "WoE", icon: "castle", sprite: "swordman", job: "Swordman", delay: -0.5 },
 ];
 const right = [
-  { href: "#rankings", label: "Rankings", icon: "trophy", hair: "#b8863b", delay: -0.7, facing: "left" as const },
-  { href: "#descargar", label: "Descargar", icon: "download", hair: "#8c3a2a", delay: -2.1, facing: "left" as const },
+  { href: "#rankings", label: "Rankings", icon: "trophy", sprite: "mage", job: "Mage", delay: -1.1 },
+  { href: "#descargar", label: "Descargar", icon: "download", sprite: "merchant", job: "Merchant", delay: -0.8 },
 ];
 const discordHref = config.discordUrl || "#comunidad";
 ---
@@ -28,18 +29,18 @@ const discordHref = config.discordUrl || "#comunidad";
       </div>
     </div>
   </div>
-  <nav class="hero-novices" aria-label="Explorar con los Novices">
+  <nav class="hero-novices" aria-label="Explorar con los personajes">
     <div class="band band--left">
-      {left.map((n) => <Novice {...n} />)}
+      {left.map((n) => <Character {...n} />)}
     </div>
     <div class="band band--right">
-      {right.map((n) => <Novice {...n} />)}
+      {right.map((n) => <Character {...n} />)}
     </div>
   </nav>
 </section>
 
 <script>
-  import "../scripts/novices.ts";
+  import "../scripts/guides.ts";
 </script>
 
 <style>
@@ -95,7 +96,7 @@ const discordHref = config.discordUrl || "#comunidad";
   .band { display: flex; gap: clamp(0.5rem, 2vw, 1.75rem); align-items: flex-end; }
 
   @media (min-width: 1100px) {
-    .hero-novices :global(.novice) { --nv-w: 104px; }
+    .hero-novices :global(.guide) { --s: 3; }
   }
   /* Portrait: castle in the top band (see WoeScene), copy below it. */
   @media (max-width: 760px), (max-aspect-ratio: 1/1) {
@@ -112,13 +113,12 @@ const discordHref = config.discordUrl || "#comunidad";
       padding-top: 1.5rem;
     }
     .band { display: contents; }
-    .hero-novices :global(.novice) { padding-inline: 0; }
-    .hero-novices :global(.novice) { --nv-w: 60px; }
-    .hero-novices :global(.novice-label) {
+    .hero-novices :global(.guide) { padding-inline: 0; --s: 2; }
+    .hero-novices :global(.guide-label) {
       opacity: 1; transform: none; order: 2;
       padding: 0.3rem 0.5rem; font-size: 0.6875rem; letter-spacing: 0.04em;
       background: none; border-color: transparent;
     }
-    .hero-novices :global(.novice-label svg) { display: none; }
+    .hero-novices :global(.guide-label svg) { display: none; }
   }
 </style>

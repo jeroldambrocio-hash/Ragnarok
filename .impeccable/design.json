@@ -250,7 +250,7 @@
       },
       "label": {
         "displayName": "Label",
-        "purpose": "Uppercase tracked metadata: hero meta line, Novice labels, table heads, countdown units (0.75 to 0.8125rem, +0.06 to +0.14em)."
+        "purpose": "Uppercase tracked metadata: hero meta line, character labels, table heads, countdown units (0.75 to 0.8125rem, +0.06 to +0.14em)."
       }
     },
     "shadows": [
@@ -422,21 +422,21 @@
     {
       "name": "Novice Label",
       "kind": "custom",
-      "refersTo": "novice-label",
-      "description": "Pill label that rides above each Novice guide; full opacity with a gold-tinted border on hover or focus.",
-      "html": "<a class=\"ds-novice\" href=\"#\"><span class=\"ds-novice-label\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M4 20V8l2-2 2 2v3h2V6l2-2 2 2v5h2V8l2-2 2 2v12zM10 20v-4a2 2 0 0 1 4 0v4\"/></svg>WoE</span></a>",
-      "css": ".ds-novice { display: inline-flex; padding: 0.4rem 0.5rem; border-radius: 12px; text-decoration: none; } .ds-novice-label { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.35rem 0.7rem; font: 600 0.8125rem/1 \"Onest\", system-ui, sans-serif; letter-spacing: 0.06em; text-transform: uppercase; color: #ece7dd; background: rgba(16, 18, 23, 0.82); border: 1px solid rgba(236, 231, 221, 0.1); border-radius: 999px; opacity: 0.72; transform: translateY(3px); transition: opacity 160ms, transform 220ms cubic-bezier(0.16, 1, 0.3, 1), border-color 160ms; } .ds-novice-label svg { color: #d4b06a; } .ds-novice:hover .ds-novice-label { opacity: 1; transform: none; border-color: rgba(212, 176, 106, 0.45); } .ds-novice:focus-visible { outline: 2px solid #d4b06a; outline-offset: 2px; } .ds-novice:focus-visible .ds-novice-label { opacity: 1; transform: none; border-color: #d4b06a; }"
+      "refersTo": "guide-label",
+      "description": "Pill label that rides above each job character guide; full opacity with a gold-tinted border on hover or focus.",
+      "html": "<a class=\"ds-novice\" href=\"#\"><span class=\"ds-guide-label\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M4 20V8l2-2 2 2v3h2V6l2-2 2 2v5h2V8l2-2 2 2v12zM10 20v-4a2 2 0 0 1 4 0v4\"/></svg>WoE</span></a>",
+      "css": ".ds-novice { display: inline-flex; padding: 0.4rem 0.5rem; border-radius: 12px; text-decoration: none; } .ds-guide-label { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.35rem 0.7rem; font: 600 0.8125rem/1 \"Onest\", system-ui, sans-serif; letter-spacing: 0.06em; text-transform: uppercase; color: #ece7dd; background: rgba(16, 18, 23, 0.82); border: 1px solid rgba(236, 231, 221, 0.1); border-radius: 999px; opacity: 0.72; transform: translateY(3px); transition: opacity 160ms, transform 220ms cubic-bezier(0.16, 1, 0.3, 1), border-color 160ms; } .ds-guide-label svg { color: #d4b06a; } .ds-novice:hover .ds-guide-label { opacity: 1; transform: none; border-color: rgba(212, 176, 106, 0.45); } .ds-novice:focus-visible { outline: 2px solid #d4b06a; outline-offset: 2px; } .ds-novice:focus-visible .ds-guide-label { opacity: 1; transform: none; border-color: #d4b06a; }"
     }
   ],
   "narrative": {
     "northStar": "The Eve of the Siege",
-    "overview": "The site is a night hill facing a lit castle under siege. Everything else is quiet so that scene can speak: a near-black charcoal ground, graphite planes used sparingly, warm off-white text, and two disciplined accents. Emperium gold marks what the visitor should do or remember (the primary action, key numerals, focus, the selected tab). Banner crimson belongs to the war and to live state: the WoE band, its countdown rules, castle dividers, the offline dot, invalid fields. Nothing else is coloured.\n\nStructure is carried by hairlines and space, not by boxes. Content lists are rows divided by 1px rules at 10% off-white; sections breathe on a large clamped rhythm; containers are rare and quiet. Display type is Faculty Glyphic, a slightly carved fantasy serif that says Ragnarok without costume; everything a player reads to act is set in Onest, modern and plain. The cinematic layer lives in authored SVG and a light ember canvas behind the hero, with subtle pointer and scroll parallax that never touches legibility, and a band of authored SVG Novices who act as the hero's navigation.\n\nThe system refuses the old private-server page (banners, bevelled buttons, dense tables of colour) and the generic dark gaming template (neon glows, glassy card grids, six feature tiles).",
+    "overview": "The site is a night hill facing a lit castle under siege. Everything else is quiet so that scene can speak: a near-black charcoal ground, graphite planes used sparingly, warm off-white text, and two disciplined accents. Emperium gold marks what the visitor should do or remember (the primary action, key numerals, focus, the selected tab). Banner crimson belongs to the war and to live state: the WoE band, its countdown rules, castle dividers, the offline dot, invalid fields. Nothing else is coloured.\n\nStructure is carried by hairlines and space, not by boxes. Content lists are rows divided by 1px rules at 10% off-white; sections breathe on a large clamped rhythm; containers are rare and quiet. Display type is Faculty Glyphic, a slightly carved fantasy serif that says Ragnarok without costume; everything a player reads to act is set in Onest, modern and plain. The cinematic layer lives in authored SVG and a light ember canvas behind the hero, with subtle pointer and scroll parallax that never touches legibility, and a band of original pixel-art job characters (Novice, Swordman, Mage, Merchant) who act as the hero's navigation. Owner-supplied official Ragnarok Online art appears framed in the WoE and community sections, always credited to Gravity.\n\nThe system refuses the old private-server page (banners, bevelled buttons, dense tables of colour) and the generic dark gaming template (neon glows, glassy card grids, six feature tiles).",
     "keyCharacteristics": [
       "Dark only (`color-scheme: dark`); charcoal ground, graphite used for inputs, tab tracks and selected states.",
       "Gold is scarce and meaningful; crimson is reserved for war and live state.",
       "Hairline-ruled rows instead of cards; generous clamped section spacing.",
       "Faculty Glyphic for display and numerals, Onest for all functional text.",
-      "Authored SVG for the scene, the Novices and a single-stroke icon set; no raster art.",
+      "Authored SVG for the scene and a single-stroke icon set; pixel-art PNG sprite sheets for the job characters (rendered with `image-rendering: pixelated` at 2x or 3x); official art only as framed, captioned figures.",
       "Motion is small, eased (`cubic-bezier(0.16, 1, 0.3, 1)`), and fully disabled under reduced motion.",
       "Illustrative data is always marked with a dashed sample badge; unavailable actions render as disabled buttons that say why."
     ],

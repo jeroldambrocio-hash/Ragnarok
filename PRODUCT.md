@@ -8,7 +8,7 @@ web
 
 ## Stack
 
-Astro (static output) with small vanilla TypeScript islands, deployed to GitHub Pages by a GitHub Actions workflow. Chosen 2026-10-05 when the owner asked for reusable components (Navbar, Hero, Novice, ServerStatus, Ranking, WoE, Download, Discord, Footer) and code splitting. Earlier version was plain static HTML.
+Astro (static output) with small vanilla TypeScript islands, deployed to GitHub Pages by a GitHub Actions workflow. Chosen 2026-10-05 when the owner asked for reusable components (Navbar, Hero, Character, ServerStatus, Ranking, WoE, Download, Discord, Footer) and code splitting. Earlier version was plain static HTML.
 
 ## Users
 
@@ -39,7 +39,7 @@ Owner brief (2026-10-05), binding: a modern 2026 game website, not an old privat
 
 ## Evidence on Hand
 
-None, and no image assets of any kind (no WoE art, no Novice sprites). No player counts, uptime, launch date, screenshots, testimonials, Discord link, or download URL exist. Future work must not fabricate online-player numbers, reviews, or launch dates; any illustrative figure must be labelled as an example.
+Official Ragnarok Online art supplied by the owner on 2026-10-05 (public/art: emperium, rivales), used framed and credited to Gravity; the owner also asked for game-style sprites drawn by us (tools/sprites.py). A Ragnarok M banner with official logos was supplied but deliberately not used. No player counts, uptime, launch date, screenshots, testimonials, Discord link, or download URL exist. Future work must not fabricate online-player numbers, reviews, or launch dates; any illustrative figure must be labelled as an example.
 
 ## Product Principles
 

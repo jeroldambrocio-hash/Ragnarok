@@ -14,6 +14,10 @@ Los datos de ejemplo (estado, jugadores, rankings, horario de WoE) están en `sr
 
 ## Arte provisional
 
-El fondo de War of Emperium (`src/components/WoeScene.astro`) y los Novices (`src/components/Novice.astro`) son ilustraciones SVG provisionales. Para usar sprites reales, pasa `sprite="/ruta.png"` a cada `<Novice>`.
+El fondo de War of Emperium (`src/components/WoeScene.astro`) es una ilustración SVG provisional.
+
+Los personajes del hero (Novice, Swordman, Mage y Merchant) son pixel art original generado con `python3 tools/sprites.py` (necesita Pillow), en `public/sprites/`. Cada hoja tiene fotogramas de 32x48: columnas reposo, respiración, saludo y celebración; filas cabeza de frente, mirando a la izquierda y a la derecha. Para cambiar un personaje, sustituye su hoja por otra con la misma cuadrícula.
+
+El arte oficial de Ragnarok Online (`public/art/`) lo aportó el dueño del servidor y pertenece a Gravity.
 
 Incluye la skill [impeccable](https://github.com/pbakaus/impeccable) (Apache 2.0) en `.claude/skills/impeccable`.
