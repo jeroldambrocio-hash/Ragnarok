@@ -4,12 +4,26 @@ import SampleBadge from "./SampleBadge.astro";
 import { facts, sampleStatus } from "../data/server";
 import { config } from "../config";
 const nf = new Intl.NumberFormat("es");
+const values = new Set(facts.rates.map((r) => r.value));
+const uniform = values.size === 1 && facts.rates[0].value;
 ---
 <Section id="servidor" title="El servidor, de un vistazo" lede="Ragnarok Online como lo recuerdas: mapas, fórmulas y clases pre-renewal, con un ritmo de progreso más ágil.">
   <div class="status" data-status data-api={config.statusApi}>
-    <div class="status-live" aria-labelledby="status-live-title">
+    <div class="status-rates">
+      {uniform ? (
+        <p class="rates-line"><span class="rates-big">{uniform}</span><span class="rates-what">en todo:<br />{facts.rates.map((r, i) => <Fragment><span class="nb">{r.label}{i < facts.rates.length - 1 ? " ·" : ""}</span>{" "}</Fragment>)}</span></p>
+      ) : (
+        <dl class="rates-list">{facts.rates.map((r) => <div><dt>{r.label}</dt><dd>{r.value ?? "Por anunciar"}</dd></div>)}</dl>
+      )}
+      <dl class="facts">
+        <div><dt>Modo</dt><dd>Pre-renewal</dd></div>
+        <div><dt>Episodio</dt><dd>{facts.episode ?? "Por anunciar"}</dd></div>
+      </dl>
+    </div>
+
+    <div class="status-live">
       <div class="status-live-head">
-        <h3 id="status-live-title" class="mini-title">Estado en vivo</h3>
+        <h3 class="sub">Estado en vivo</h3>
         <span data-status-sample><SampleBadge /></span>
       </div>
       <dl class="stats">
@@ -27,22 +41,6 @@ const nf = new Intl.NumberFormat("es");
         </div>
       </dl>
     </div>
-
-    <div class="status-rates">
-      <h3 class="mini-title">Rates</h3>
-      <dl class="rates">
-        {facts.rates.map((r) => (
-          <div class="rate">
-            <dt>{r.label}</dt>
-            <dd class="num">{r.value ?? "Por anunciar"}</dd>
-          </div>
-        ))}
-        <div class="rate">
-          <dt>Episodio</dt>
-          <dd class="ep">{facts.episode}</dd>
-        </div>
-      </dl>
-    </div>
   </div>
 </Section>
 
@@ -53,20 +51,22 @@ const nf = new Intl.NumberFormat("es");
 <style>
   .status {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
-    gap: clamp(2rem, 5vw, 5rem);
-    border-top: 1px solid var(--line);
-    padding-top: 2rem;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    gap: clamp(2rem, 6vw, 6rem);
+    align-items: start;
   }
+  :global(.sub) { font: 600 1.0625rem/1.3 var(--sans); color: var(--text); }
+  .rates-line { display: flex; align-items: center; gap: 1.5rem; }
+  .rates-big { font: 400 clamp(5rem, 11vw, 7.5rem)/0.85 var(--display); color: var(--gold); letter-spacing: -0.02em; }
+  .rates-what { min-width: 0; font-size: 1.0625rem; color: var(--text-2); line-height: 1.5; }
+  .rates-list { display: flex; flex-wrap: wrap; gap: 1rem 2rem; margin: 0; }
+  .rates-list dd { margin: 0; font: 400 2.5rem/1 var(--display); color: var(--gold); }
+  .facts { display: flex; gap: 3rem; margin: 2rem 0 0; padding-top: 1.25rem; border-top: 1px solid var(--line); }
+  .facts dt { font-size: 0.875rem; color: var(--text-3); }
+  .facts dd { margin: 0.25rem 0 0; font: 400 1.35rem/1.2 var(--display); }
+
   .status-live-head { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
-  :global(.mini-title) {
-    font: 600 0.75rem/1.2 var(--sans);
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--text-3);
-  }
-  .stats, .rates { margin: 1.25rem 0 0; display: grid; }
-  .stats { gap: 0; }
+  .stats { margin: 0.75rem 0 0; }
   .stat {
     display: flex; align-items: baseline; justify-content: space-between; gap: 1rem;
     padding: 1rem 0;
@@ -75,23 +75,10 @@ const nf = new Intl.NumberFormat("es");
   .stat dt { color: var(--text-2); }
   .stat dd { margin: 0; display: inline-flex; align-items: center; gap: 0.55rem; font-weight: 600; }
   .num { font-variant-numeric: tabular-nums; }
-  .stat .num { font: 400 1.75rem/1 var(--display); }
+  .nb { white-space: nowrap; }
+  .stat .num { font: 600 1.5rem/1 var(--sans); }
   .dot { width: 0.6rem; height: 0.6rem; border-radius: 50%; background: var(--online); box-shadow: 0 0 0 4px rgba(108, 197, 138, 0.15); }
   .dot[data-online="false"] { background: var(--crimson); box-shadow: 0 0 0 4px rgba(194, 58, 69, 0.15); }
 
-  .rates { grid-template-columns: repeat(5, minmax(0, 1fr)); }
-  .rate { padding: 0.25rem 1rem 0.25rem 0; border-right: 1px solid var(--line); margin-right: 1rem; }
-  .rate:last-child { border-right: 0; margin-right: 0; }
-  .rate dt { font-size: 0.875rem; color: var(--text-2); }
-  .rate dd { margin: 0.4rem 0 0; font: 400 clamp(2.2rem, 4vw, 3.25rem)/1 var(--display); color: var(--gold); }
-  .rate dd.ep { font-size: clamp(1.15rem, 2vw, 1.5rem); line-height: 1.2; color: var(--text); padding-top: 0.4rem; }
-
-  @media (max-width: 900px) {
-    .status { grid-template-columns: 1fr; }
-  }
-  @media (max-width: 560px) {
-    .rates { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem 0; }
-    .rate:nth-child(2n) { border-right: 0; margin-right: 0; }
-    .rate:last-child { grid-column: 1 / -1; }
-  }
+  @media (max-width: 900px) { .status { grid-template-columns: 1fr; } }
 </style>

@@ -58,12 +58,14 @@ if (scene && !reduced) {
     let parts: P[] = [];
     const count = () => (innerWidth < 760 ? 16 : 34);
 
+    const portrait = window.matchMedia("(max-width: 760px), (max-aspect-ratio: 1/1)");
     const spawn = (initial = false): P => {
-      // Embers rise from the castle on the right side of the scene.
-      const originX = w * (innerWidth < 760 ? 0.62 : 0.76);
+      // Embers rise from the castle: right side on wide screens, top band in portrait.
+      const originX = w * (portrait.matches ? 0.66 : 0.76);
+      const top = portrait.matches ? 0.22 : 0.62;
       return {
         x: originX + (Math.random() - 0.5) * w * 0.32,
-        y: initial ? Math.random() * h : h * (0.62 + Math.random() * 0.2),
+        y: initial ? Math.random() * h * (portrait.matches ? 0.5 : 1) : h * (top + Math.random() * 0.14),
         vx: (Math.random() - 0.4) * 0.25,
         vy: -(0.25 + Math.random() * 0.55),
         r: 0.6 + Math.random() * 1.5,

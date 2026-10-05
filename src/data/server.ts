@@ -1,6 +1,7 @@
 /** Confirmed facts about the server (PRODUCT.md). Safe to show as real. */
 export const facts = {
-  episode: "Pre-renewal",
+  /** Episode number not confirmed yet. */
+  episode: null as string | null,
   rates: [
     { label: "Base EXP", value: "5x" },
     { label: "Job EXP", value: "5x" },

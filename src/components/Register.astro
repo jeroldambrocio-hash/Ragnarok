@@ -5,7 +5,7 @@ import { config } from "../config";
   <div class="wrap reg-inner">
     <div class="reg-copy">
       <h2 id="registro-title">Crea tu cuenta</h2>
-      <p>Tres datos y listo. Menos de un minuto.</p>
+      <p>Usuario, correo y contraseña. Menos de un minuto.</p>
     </div>
     <form class="reg-form" data-register data-endpoint={config.registerEndpoint} novalidate>
       <div class="field">
@@ -23,7 +23,7 @@ import { config } from "../config";
         <p class="hint" id="r-pass-hint">Mínimo 6 caracteres</p>
       </div>
       <fieldset class="field sex">
-        <legend>Personaje</legend>
+        <legend>Sexo de la cuenta <span class="opt">(en pre-renewal define tus personajes)</span></legend>
         <div class="seg">
           <label><input type="radio" name="sexo" value="M" checked /><span>Masculino</span></label>
           <label><input type="radio" name="sexo" value="F" /><span>Femenino</span></label>
@@ -66,6 +66,8 @@ import { config } from "../config";
   .field input:focus-visible { outline: none; border-color: var(--gold); background: var(--surface); box-shadow: 0 0 0 3px rgba(212, 176, 106, 0.18); }
   .field input[aria-invalid="true"] { border-color: var(--crimson); }
   .hint { font-size: 0.8125rem; color: var(--text-3); }
+  .opt { font-weight: 400; color: var(--text-3); }
+  .sex .seg { min-height: 2.75rem; }
 
   .seg { display: grid; grid-template-columns: 1fr 1fr; padding: 0.25rem; min-height: 3rem; background: var(--bg-2); border: 1px solid var(--line-strong); border-radius: 8px; }
   .seg label { position: relative; display: grid; cursor: pointer; }

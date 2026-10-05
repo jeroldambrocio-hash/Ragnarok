@@ -1,7 +1,6 @@
 ---
 import Button from "./Button.astro";
 import { config } from "../config";
-const channels = ["#anuncios", "#buscar-party", "#woe", "#comercio"];
 ---
 <section id="comunidad" class="cm" aria-labelledby="comunidad-title">
   <div class="wrap cm-inner">
@@ -16,19 +15,13 @@ const channels = ["#anuncios", "#buscar-party", "#woe", "#comercio"];
         )}
       </div>
     </div>
-    <div class="cm-preview" aria-label="Canales del servidor de Discord">
-      <p class="mini-title">Canales</p>
-      <ul>
-        {channels.map((c) => <li><span class="hash" aria-hidden="true">#</span>{c.slice(1)}</li>)}
-      </ul>
-    </div>
   </div>
 </section>
 
 <style>
   .cm { padding-block: clamp(5rem, 11vw, 9rem); }
   .cm-inner {
-    display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr);
+    display: grid; grid-template-columns: 1fr;
     gap: clamp(2rem, 5vw, 5rem); align-items: center;
     padding: clamp(2rem, 5vw, 3.5rem);
     background: linear-gradient(135deg, var(--surface) 0%, var(--bg-2) 100%);
@@ -38,14 +31,5 @@ const channels = ["#anuncios", "#buscar-party", "#woe", "#comercio"];
   .cm-copy h2 { font: 400 clamp(2rem, 4.4vw, 3.25rem)/1.05 var(--display); }
   .cm-copy p { margin-top: 0.9rem; color: var(--text-2); font-size: 1.0625rem; max-width: 34rem; }
   .cm-cta { margin-top: 1.75rem; }
-  .cm-preview ul { margin: 0.9rem 0 0; padding: 0; list-style: none; }
-  .cm-preview li {
-    display: flex; align-items: center; gap: 0.6rem;
-    padding: 0.55rem 0.75rem; margin-inline: -0.75rem;
-    color: var(--text-2); border-radius: 6px;
-    transition: background-color var(--fast), color var(--fast);
-  }
-  .cm-preview li:hover { background: rgba(236, 231, 221, 0.05); color: var(--text); }
-  .hash { color: var(--text-3); font-size: 1.1rem; }
   @media (max-width: 760px) { .cm-inner { grid-template-columns: 1fr; } }
 </style>

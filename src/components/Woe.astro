@@ -22,7 +22,7 @@ const days = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "
     <div class="woe-grid">
       <div class="woe-next" data-woe data-schedule={JSON.stringify(schedule.sessions)}>
         <div class="woe-next-head">
-          <h3 class="mini-title">Próxima WoE</h3>
+          <h3 class="sub">Próxima WoE</h3>
           <SampleBadge label="Horario de ejemplo" />
         </div>
         <p class="woe-when" data-woe-when>—</p>
@@ -41,19 +41,24 @@ const days = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "
       </div>
 
       <div class="realms">
-        <h3 class="mini-title">Castillos</h3>
-        <ul class="realm-list">
+        <div class="realms-head">
+          <h3 class="sub">Castillos</h3>
+          <SampleBadge label="Disponibilidad por confirmar" />
+        </div>
+        <ul class="realm-list" data-realms>
           {realms.map((r) => (
             <li class="realm">
-              <div class="realm-head">
+              <details open>
+              <summary class="realm-head">
                 <span class="realm-name">{r.realm}</span>
                 <span class="realm-town">{r.town}</span>
-              </div>
+              </summary>
               <ul class="castles">
                 {r.castles.map((c) => (
                   <li><span>{c}</span><span class="owner">Sin conquistar</span></li>
                 ))}
               </ul>
+              </details>
             </li>
           ))}
         </ul>
@@ -99,7 +104,7 @@ const days = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "
   .woe-when { margin-top: 1rem; color: var(--text-2); }
   .countdown { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; margin-top: 0.75rem; }
   .countdown div { display: flex; flex-direction: column; padding: 0.9rem 0; border-top: 2px solid var(--crimson); }
-  .countdown span { font: 400 clamp(2rem, 4vw, 2.75rem)/1 var(--display); font-variant-numeric: tabular-nums; }
+  .countdown span { font: 500 clamp(2rem, 4vw, 2.75rem)/1 var(--sans); font-variant-numeric: proportional-nums; letter-spacing: -0.01em; display: inline-block; min-width: 2.1ch; text-align: center; }
   .countdown small { margin-top: 0.35rem; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); }
   .schedule { margin: 1.5rem 0 0; padding: 0; list-style: none; }
   .schedule li { display: flex; justify-content: space-between; padding: 0.7rem 0; border-bottom: 1px solid rgba(236, 231, 221, 0.08); color: var(--text-2); }
@@ -112,7 +117,9 @@ const days = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "
   .woe-link:hover svg { transform: translateX(3px); }
 
   .realm-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.75rem 2rem; margin: 1.25rem 0 0; padding: 0; list-style: none; }
-  .realm-head { display: flex; align-items: baseline; justify-content: space-between; gap: 0.5rem; padding-bottom: 0.6rem; border-bottom: 1px solid rgba(194, 58, 69, 0.35); }
+  .realms-head { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+  .realm-head { list-style: none; cursor: pointer; display: flex; align-items: baseline; justify-content: space-between; gap: 0.5rem; padding-bottom: 0.6rem; border-bottom: 1px solid rgba(194, 58, 69, 0.35); }
+  .realm-head::-webkit-details-marker { display: none; }
   .realm-name { font: 400 1.2rem/1.2 var(--display); }
   .realm-town { font-size: 0.8125rem; color: var(--text-3); }
   .castles { margin: 0; padding: 0; list-style: none; }

@@ -1,3 +1,8 @@
+// On small screens show one realm at a time.
+if (window.matchMedia("(max-width: 900px)").matches) {
+  document.querySelectorAll<HTMLDetailsElement>("[data-realms] details").forEach((d, i) => (d.open = i === 0));
+}
+
 // Countdown to the next WoE session from the (sample) schedule, in local time.
 const root = document.querySelector<HTMLElement>("[data-woe]");
 if (root) {
