@@ -3,7 +3,7 @@ const scene = document.querySelector<HTMLElement>(".scene");
 const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 if (scene && !reduced) {
-  const layers = Array.from(scene.querySelectorAll<SVGElement>("[data-depth]"));
+  const layers = Array.from(scene.querySelectorAll<HTMLElement>("[data-depth]"));
   const fine = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
   let mx = 0;
   let my = 0;

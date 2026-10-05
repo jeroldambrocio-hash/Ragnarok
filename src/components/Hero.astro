@@ -96,14 +96,14 @@ const discordHref = config.discordUrl || "#comunidad";
   .band { display: flex; gap: clamp(0.5rem, 2vw, 1.75rem); align-items: flex-end; }
 
   @media (min-width: 1100px) {
-    .hero-novices :global(.guide) { --s: 3; }
+    .hero-novices :global(.guide) { --s: 2; }
   }
   /* Portrait: castle in the top band (see WoeScene), copy below it. */
   @media (max-width: 760px), (max-aspect-ratio: 1/1) {
     .hero-inner { align-items: flex-end; padding-top: 44svh; padding-bottom: 2.5rem; }
   }
   @media (max-width: 760px) {
-    .hero-inner { padding-top: 40svh; padding-bottom: 0.5rem; }
+    .hero-inner { padding-top: 44svh; padding-bottom: 0.5rem; }
     .hero-actions { gap: 0.6rem; }
     .hero-actions :global(.btn--primary) { flex: 1 1 100%; }
     .hero-actions :global(.btn--secondary) { flex: 1 1 auto; }
@@ -113,7 +113,7 @@ const discordHref = config.discordUrl || "#comunidad";
       padding-top: 1.5rem;
     }
     .band { display: contents; }
-    .hero-novices :global(.guide) { padding-inline: 0; --s: 2; }
+    .hero-novices :global(.guide) { padding-inline: 0; --s: 1.5; }
     .hero-novices :global(.guide-label) {
       opacity: 1; transform: none; order: 2;
       padding: 0.3rem 0.5rem; font-size: 0.6875rem; letter-spacing: 0.04em;

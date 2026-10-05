@@ -1,7 +1,6 @@
 ---
 import Button from "./Button.astro";
 import { config } from "../config";
-const art = `${import.meta.env.BASE_URL.replace(/\/$/, "")}/art/rivales.webp`;
 ---
 <section id="comunidad" class="cm" aria-labelledby="comunidad-title">
   <div class="wrap cm-inner">
@@ -16,18 +15,13 @@ const art = `${import.meta.env.BASE_URL.replace(/\/$/, "")}/art/rivales.webp`;
         )}
       </div>
     </div>
-    <figure class="cm-art">
-      <img src={art} width="575" height="225" loading="lazy" decoding="async"
-        alt="Arte oficial de Ragnarok Online: dos aventureros rivales cara a cara." />
-      <figcaption>Arte oficial de Ragnarok Online © Gravity</figcaption>
-    </figure>
   </div>
 </section>
 
 <style>
   .cm { padding-block: clamp(5rem, 11vw, 9rem); }
   .cm-inner {
-    display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+    display: grid; grid-template-columns: 1fr;
     gap: clamp(2rem, 5vw, 5rem); align-items: center;
     padding: clamp(2rem, 5vw, 3.5rem);
     background: linear-gradient(135deg, var(--surface) 0%, var(--bg-2) 100%);
@@ -37,11 +31,4 @@ const art = `${import.meta.env.BASE_URL.replace(/\/$/, "")}/art/rivales.webp`;
   .cm-copy h2 { font: 400 clamp(2rem, 4.4vw, 3.25rem)/1.05 var(--display); }
   .cm-copy p { margin-top: 0.9rem; color: var(--text-2); font-size: 1.0625rem; max-width: 34rem; }
   .cm-cta { margin-top: 1.75rem; }
-  .cm-art { margin: 0; }
-  .cm-art img {
-    width: 100%; height: auto; aspect-ratio: 575 / 225; object-fit: cover;
-    border-radius: 10px; border: 1px solid var(--line-strong);
-  }
-  .cm-art figcaption { margin-top: 0.5rem; font-size: 0.75rem; color: var(--text-3); text-align: right; }
-  @media (max-width: 860px) { .cm-inner { grid-template-columns: 1fr; } .cm-art { order: -1; } }
 </style>
