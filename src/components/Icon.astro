@@ -1,0 +1,27 @@
+---
+/** Authored line icons, one stroke weight. */
+interface Props { name: string; size?: number; class?: string }
+const paths = {
+  arrow: "M5 12h14M13 6l6 6-6 6",
+  download: "M12 4v11M7 10.5l5 5 5-5M5 20h14",
+  chat: "M4 5.5h16v10H9l-5 4z",
+  server: "M4 5h16v5H4zM4 14h16v5H4zM8 7.5h.01M8 16.5h.01",
+  castle: "M4 20V8l2-2 2 2v3h2V6l2-2 2 2v5h2V8l2-2 2 2v12zM10 20v-4a2 2 0 0 1 4 0v4",
+  trophy: "M8 4h8v5a4 4 0 0 1-8 0zM8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M8.5 20h7M10 17h4",
+  sword: "M14.5 4H20v5.5L9.5 20 6 21l1-3.5zM5 15l4 4M3.5 20.5l2-2",
+  shield: "M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z",
+  scale: "M12 4v16M6 20h12M5 8h14M5 8l-2.5 6a3 3 0 0 0 5 0zM19 8l-2.5 6a3 3 0 0 0 5 0zM12 4l-2 1M12 4l2 1",
+  refresh: "M20 11a8 8 0 0 0-14.5-4.5L4 8M4 4v4h4M4 13a8 8 0 0 0 14.5 4.5L20 16M20 20v-4h-4",
+  coin: "M12 4a8 8 0 1 0 0 16 8 8 0 0 0 0-16zM4 4l16 16",
+  users: "M9 11a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 6.5M18 14a6 6 0 0 1 3.5 6",
+  clock: "M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM12 7v5l3 2",
+  menu: "M4 7h16M4 12h16M4 17h16",
+  close: "M6 6l12 12M18 6L6 18",
+  check: "M5 12.5l4.5 4.5L19 7.5",
+  play: "M8 5l11 7-11 7z",
+  crown: "M4 18l-1-10 5 4 4-7 4 7 5-4-1 10zM5 21h14",
+  windows: "M4 6l7-1v6.5H4zM13 4.7l7-1v7.8h-7zM4 13.5h7V19l-7-1zM13 13.5h7v7.8l-7-1z",
+};
+const { name, size = 20, class: cls } = Astro.props;
+---
+<svg class={cls} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d={(paths as Record<string, string>)[name]} /></svg>

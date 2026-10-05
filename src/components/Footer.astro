@@ -1,0 +1,30 @@
+---
+const year = new Date().getFullYear();
+---
+<footer class="ft">
+  <div class="wrap ft-inner">
+    <p class="ft-brand">Ragnarok <span>Forever</span></p>
+    <nav aria-label="Pie de página">
+      <ul>
+        <li><a href="#servidor">Servidor</a></li>
+        <li><a href="#woe">WoE</a></li>
+        <li><a href="#rankings">Rankings</a></li>
+        <li><a href="#descargar">Descargar</a></li>
+        <li><a href="#registro">Registro</a></li>
+        <li><a href="#comunidad">Comunidad</a></li>
+      </ul>
+    </nav>
+    <p class="ft-legal">© {year} Ragnarok Forever. Servidor privado sin relación con Gravity Co., Ltd. Ragnarok Online es una marca registrada de Gravity Co., Ltd.</p>
+  </div>
+</footer>
+<style>
+  .ft { border-top: 1px solid var(--line); padding-block: 2.5rem; }
+  .ft-inner { display: grid; grid-template-columns: auto 1fr; gap: 1.25rem 2rem; align-items: center; }
+  .ft-brand { font: 400 1.125rem/1 var(--display); letter-spacing: 0.04em; }
+  .ft-brand span { color: var(--gold); }
+  nav ul { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 0.25rem 1.25rem; margin: 0; padding: 0; list-style: none; }
+  nav a { display: inline-block; padding-block: 0.6rem; font-size: 0.875rem; color: var(--text-2); text-decoration: none; transition: color var(--fast); }
+  nav a:hover { color: var(--text); }
+  .ft-legal { grid-column: 1 / -1; font-size: 0.8125rem; color: var(--text-3); }
+  @media (max-width: 760px) { .ft-inner { grid-template-columns: 1fr; } nav ul { justify-content: flex-start; } }
+</style>

@@ -1,281 +1,302 @@
 ---
 name: Ragnarok Forever
-description: Prontera's south plaza at evening, drawn in the 2002 Ragnarok Online client's interface language.
+description: The eve of a War of Emperium, presented as a modern, quiet, premium game site.
 colors:
-  stone: "#a3a8b5"
-  stone-seam: "#939aa9"
-  ink: "#1b2134"
-  ink-soft: "#3c4560"
-  paper: "#ffffff"
-  win-frame: "#44538a"
-  bar-top: "#dde3fb"
-  bar-bottom: "#b3c0ee"
-  field-wash: "#f4f6fd"
-  field-edge: "#9aa5cc"
-  hairline: "#c3cae6"
-  npc-blue: "#2440c4"
-  vend-pink: "#c42a62"
-  vend-pink-deep: "#8e1743"
-  vend-soft: "#fde4ee"
-  chat-night: "rgba(18, 22, 38, .82)"
-  chat-green: "#8ff08a"
-  system-gold: "#ffd36b"
-  button-face: "#e6eaf7"
-  button-edge: "#6b78a8"
+  night: "#0b0c0f"
+  night-raised: "#101217"
+  graphite: "#161920"
+  graphite-high: "#1d2029"
+  hairline: "rgba(236, 231, 221, 0.1)"
+  hairline-strong: "rgba(236, 231, 221, 0.2)"
+  parchment: "#ece7dd"
+  parchment-muted: "#b4afa5"
+  parchment-faint: "#8a867e"
+  emperium-gold: "#d4b06a"
+  emperium-gold-hi: "#e8cc8f"
+  gold-ink: "#17130a"
+  banner-crimson: "#c23a45"
+  online-green: "#6cc58a"
 typography:
   display:
-    fontFamily: "DotGothic16, MS Gothic, monospace"
-    fontSize: "clamp(3.25rem, 8.4vw, 6rem)"
+    fontFamily: "Faculty Glyphic, Iowan Old Style, Georgia, serif"
+    fontSize: "clamp(3.4rem, 9vw, 6rem)"
     fontWeight: 400
-    lineHeight: 0.98
-    letterSpacing: "-0.01em"
-  headline:
-    fontFamily: "DotGothic16, MS Gothic, monospace"
-    fontSize: "clamp(1.75rem, 4vw, 2.75rem)"
-    fontWeight: 400
-    lineHeight: 1.1
-  numeral:
-    fontFamily: "DotGothic16, MS Gothic, monospace"
-    fontSize: "clamp(2.25rem, 5vw, 3.25rem)"
-    fontWeight: 400
-    lineHeight: 1
-    fontFeature: "tnum"
-  title:
-    fontFamily: "DotGothic16, MS Gothic, monospace"
-    fontSize: "0.9375rem"
-    fontWeight: 400
-    lineHeight: 1.3
+    lineHeight: 0.92
     letterSpacing: "0.02em"
-  ui:
-    fontFamily: "DotGothic16, MS Gothic, monospace"
-    fontSize: "1rem"
+  numeral:
+    fontFamily: "Faculty Glyphic, Iowan Old Style, Georgia, serif"
+    fontSize: "clamp(5rem, 11vw, 7.5rem)"
     fontWeight: 400
-    lineHeight: 1.2
+    lineHeight: 0.85
+    letterSpacing: "-0.02em"
+  headline:
+    fontFamily: "Faculty Glyphic, Iowan Old Style, Georgia, serif"
+    fontSize: "clamp(2.1rem, 4.6vw, 3.5rem)"
+    fontWeight: 400
+    lineHeight: 1.05
+    letterSpacing: "-0.01em"
+  title:
+    fontFamily: "Faculty Glyphic, Iowan Old Style, Georgia, serif"
+    fontSize: "clamp(1.35rem, 2.2vw, 1.75rem)"
+    fontWeight: 400
+    lineHeight: 1.15
+  subhead:
+    fontFamily: "Onest, system-ui, -apple-system, Segoe UI, sans-serif"
+    fontSize: "1.0625rem"
+    fontWeight: 600
+    lineHeight: 1.3
   body:
-    fontFamily: "Nanum Gothic, Apple SD Gothic Neo, Malgun Gothic, system-ui, sans-serif"
+    fontFamily: "Onest, system-ui, -apple-system, Segoe UI, sans-serif"
     fontSize: "1rem"
     fontWeight: 400
-    lineHeight: 1.6
-  label:
-    fontFamily: "Nanum Gothic, Apple SD Gothic Neo, Malgun Gothic, system-ui, sans-serif"
-    fontSize: "0.875rem"
-    fontWeight: 700
-    lineHeight: 1.2
-rounded:
-  chip: "2px"
-  control: "3px"
-  window: "4px"
-  primary: "5px"
-spacing:
-  field: "0.7rem"
-  window-pad: "1.25rem"
-  gap: "clamp(1rem, 2.5vw, 2rem)"
-  gutter: "clamp(1rem, 4vw, 4rem)"
-  section: "clamp(3.5rem, 8vw, 6rem)"
-components:
-  window:
-    backgroundColor: "{colors.paper}"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.window}"
-  window-titlebar:
-    backgroundColor: "{colors.bar-bottom}"
-    textColor: "{colors.ink}"
-    typography: "{typography.title}"
-    padding: "0.3rem 0.7rem 0.25rem"
-  button-primary:
-    backgroundColor: "{colors.paper}"
-    textColor: "{colors.npc-blue}"
-    typography: "{typography.ui}"
-    rounded: "{rounded.primary}"
-    padding: "0.55rem 1.1rem"
-  button-primary-hover:
-    backgroundColor: "{colors.npc-blue}"
-    textColor: "{colors.paper}"
-  button-primary-big:
-    padding: "0.8rem 1.6rem"
+    lineHeight: 1.65
+  counter:
+    fontFamily: "Onest, system-ui, -apple-system, Segoe UI, sans-serif"
+    fontSize: "clamp(2rem, 4vw, 2.75rem)"
+    fontWeight: 500
+    lineHeight: 1
+    letterSpacing: "-0.01em"
   button:
-    backgroundColor: "{colors.button-face}"
-    textColor: "{colors.ink}"
-    typography: "{typography.ui}"
-    rounded: "{rounded.control}"
-    padding: "0.55rem 1.1rem"
-  button-hover:
-    backgroundColor: "{colors.bar-top}"
-  signboard:
-    backgroundColor: "{colors.paper}"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.control}"
-    padding: "0.3rem 0.6rem 0.3rem 0.45rem"
-  signboard-hover:
-    backgroundColor: "{colors.vend-soft}"
-  signboard-pink:
-    backgroundColor: "{colors.vend-pink}"
-    textColor: "{colors.paper}"
-    rounded: "{rounded.control}"
+    fontFamily: "Onest, system-ui, -apple-system, Segoe UI, sans-serif"
+    fontSize: "0.9375rem"
+    fontWeight: 600
+    lineHeight: 1.1
+    letterSpacing: "0.01em"
+  label:
+    fontFamily: "Onest, system-ui, -apple-system, Segoe UI, sans-serif"
+    fontSize: "0.8125rem"
+    fontWeight: 500
+    lineHeight: 1.4
+    letterSpacing: "0.12em"
+rounded:
+  sm: "6px"
+  md: "8px"
+  track: "10px"
+  panel: "18px"
+  pill: "999px"
+spacing:
+  gutter: "clamp(1.25rem, 5vw, 4.5rem)"
+  max: "76rem"
+  nav-h: "4rem"
+  section: "clamp(5rem, 11vw, 9rem)"
+  section-head: "clamp(2rem, 4vw, 3rem)"
+  columns: "clamp(2rem, 5vw, 5rem)"
+  row: "1rem"
+components:
+  button-primary:
+    backgroundColor: "{colors.emperium-gold}"
+    textColor: "{colors.gold-ink}"
+    typography: "{typography.button}"
+    rounded: "{rounded.md}"
+    padding: "0.7rem 1.15rem"
+    height: "2.75rem"
+  button-primary-hover:
+    backgroundColor: "{colors.emperium-gold-hi}"
+  button-primary-lg:
+    padding: "0.9rem 1.6rem"
+    height: "3.25rem"
+  button-primary-disabled:
+    backgroundColor: "{colors.graphite-high}"
+    textColor: "{colors.parchment-muted}"
+  button-secondary:
+    backgroundColor: "rgba(11, 12, 15, 0.35)"
+    textColor: "{colors.parchment}"
+    typography: "{typography.button}"
+    rounded: "{rounded.md}"
+    padding: "0.7rem 1.15rem"
+    height: "2.75rem"
+  button-ghost:
+    textColor: "{colors.parchment-muted}"
+    typography: "{typography.button}"
+    padding: "0.7rem 0.5rem"
   input:
-    backgroundColor: "{colors.field-wash}"
-    textColor: "{colors.ink}"
+    backgroundColor: "{colors.night-raised}"
+    textColor: "{colors.parchment}"
     typography: "{typography.body}"
-    rounded: "{rounded.control}"
-    padding: "0.5rem 0.6rem"
-  input-invalid:
-    backgroundColor: "{colors.vend-soft}"
-  chip:
-    backgroundColor: "{colors.vend-pink}"
-    textColor: "{colors.paper}"
-    rounded: "{rounded.chip}"
-    padding: "0.1rem 0.45rem"
-  chat-box:
-    backgroundColor: "{colors.chat-night}"
-    textColor: "{colors.paper}"
-    rounded: "{rounded.window}"
-    padding: "1rem 1.25rem"
+    rounded: "{rounded.md}"
+    padding: "0.7rem 0.9rem"
+    height: "3rem"
+  input-focus:
+    backgroundColor: "{colors.graphite}"
+  tab-track:
+    backgroundColor: "{colors.night-raised}"
+    rounded: "{rounded.track}"
+    padding: "0.25rem"
+  tab-active:
+    backgroundColor: "{colors.emperium-gold}"
+    textColor: "{colors.gold-ink}"
+    rounded: "7px"
+    height: "2.5rem"
+  segmented-checked:
+    backgroundColor: "{colors.graphite-high}"
+    textColor: "{colors.parchment}"
+    rounded: "{rounded.sm}"
+  sample-badge:
+    textColor: "{colors.parchment-muted}"
+    rounded: "{rounded.pill}"
+    padding: "0.2rem 0.55rem"
+  novice-label:
+    backgroundColor: "rgba(16, 18, 23, 0.82)"
+    textColor: "{colors.parchment}"
+    rounded: "{rounded.pill}"
+    padding: "0.35rem 0.7rem"
+  nav-link:
+    textColor: "{colors.parchment-muted}"
+    rounded: "{rounded.sm}"
+    padding: "0.5rem 0.8rem"
 ---
 
 # Design System: Ragnarok Forever
 
 ## Overview
 
-**Creative North Star: "The Prontera Evening Plaza"**
+**Creative North Star: "The Eve of the Siege"**
 
-The page is a place, not a brochure: a cool grey isometric cobble plaza with evening light falling over its far side, and on top of it the 2002 client's own interface. Facts float above the stones as merchant vending signboards; the visitor signs up by talking to a Kafra NPC in a client dialog window; the guide reads as lines in the chat box. Every piece of chrome is something a classic player has already clicked a thousand times.
+The site is a night hill facing a lit castle under siege. Everything else is quiet so that scene can speak: a near-black charcoal ground, graphite planes used sparingly, warm off-white text, and two disciplined accents. Emperium gold marks what the visitor should do or remember (the primary action, key numerals, focus, the selected tab). Banner crimson belongs to the war and to live state: the WoE band, its countdown rules, castle dividers, the offline dot, invalid fields. Nothing else is coloured.
 
-Density is low and scattered on the first viewport (signs at varied heights over open stone) and orderly below it, where content sits in client windows that alternate left and right down the plaza. The material is flat and small-scale: white windows, hairline navy frames, a pale periwinkle gradient title bar, small rounded grey-blue buttons. Depth comes from the ground, the light and the overlap of windows on stone, never from drop shadows on the UI.
+Structure is carried by hairlines and space, not by boxes. Content lists are rows divided by 1px rules at 10% off-white; sections breathe on a large clamped rhythm; containers are rare and quiet. Display type is Faculty Glyphic, a slightly carved fantasy serif that says Ragnarok without costume; everything a player reads to act is set in Onest, modern and plain. The cinematic layer lives in authored SVG and a light ember canvas behind the hero, with subtle pointer and scroll parallax that never touches legibility, and a band of authored SVG Novices who act as the hero's navigation.
 
-The world refuses the private-server default: no dark epic hero, no gold serif, no giant character render, no row of rate cards.
+The system refuses the old private-server page (banners, bevelled buttons, dense tables of colour) and the generic dark gaming template (neon glows, glassy card grids, six feature tiles).
 
 **Key Characteristics:**
-- Authored isometric cobble tile as the only background, under an evening gradient on the first viewport.
-- White client windows with a 1px navy frame and a periwinkle gradient title bar.
-- Pixel face (DotGothic16) for every in-game voice; Nanum Gothic for running text.
-- Three game accents with fixed jobs: NPC blue, vending pink, chat green.
-- Outlined white name tags as headings.
-- Idle bob on floating signboards; NPC text types out once.
+- Dark only (`color-scheme: dark`); charcoal ground, graphite used for inputs, tab tracks and selected states.
+- Gold is scarce and meaningful; crimson is reserved for war and live state.
+- Hairline-ruled rows instead of cards; generous clamped section spacing.
+- Faculty Glyphic for display and numerals, Onest for all functional text.
+- Authored SVG for the scene, the Novices and a single-stroke icon set; no raster art.
+- Motion is small, eased (`cubic-bezier(0.16, 1, 0.3, 1)`), and fully disabled under reduced motion.
+- Illustrative data is always marked with a dashed sample badge; unavailable actions render as disabled buttons that say why.
 
 ## Colors
 
-A cool, low-chroma stone-and-paper base carrying three saturated accents borrowed directly from the client's own colour coding.
+A night palette of warm-neutral charcoals and parchment whites, lit by one gold and, only where war or live state is involved, one crimson.
 
 ### Primary
-- **NPC Name Blue** (npc-blue): NPC names, the primary action ("Crear cuenta", "Descargar cliente"), rate and class names, links, focus ring on fields. It means "talk to this / do this".
+- **Emperium Gold** (`emperium-gold`): the filled primary button ("Jugar ahora", "Jugar", "Crear cuenta"), the brand diamond and "Forever" in the wordmark, hero "FOREVER", the rates numeral, the first-place rank, the active tab ink, nav underline, focus outlines, text caret and selection. **Emperium Gold High** (`emperium-gold-hi`) is its hover state only. **Gold Ink** (`gold-ink`) is the text colour on any gold fill.
 
 ### Secondary
-- **Vending Pink** (vend-pink): the vending cart glyph, rate numerals, the pre-renewal chip and the one featured signboard, selection and the global focus outline, invalid fields. It means "this is on offer".
-- **Vending Pink Deep** (vend-pink-deep): frame of the pink signboard only.
-- **Vending Blush** (vend-soft): hover wash on signboards and the background of an invalid field.
+- **Banner Crimson** (`banner-crimson`): the War of Emperium world. The WoE section's radial wash and 25% border, the 2px top rule over each countdown unit, castle realm dividers (35% alpha), the scene's banners and fire falloff, the offline status dot, and invalid input borders.
 
 ### Tertiary
-- **Chat Green** (chat-green): speaker names in the chat box only.
-- **System Gold** (system-gold): the system line closing the chat box only.
+- **Online Green** (`online-green`): the status dot when the server is up, with a 15% halo ring. Never used for anything else.
 
 ### Neutral
-- **Plaza Stone** (stone): page background colour beneath the cobble tile and the scrollbar track; the tile's seams use **Stone Seam** (stone-seam).
-- **Night Ink** (ink): all body text, the outline of name tags.
-- **Slate Ink** (ink-soft): form labels, hints, table headers and secondary table cells.
-- **Window Paper** (paper): window bodies, signboards, name-tag fill.
-- **Window Frame Navy** (win-frame): the 1px frame on every window and signboard.
-- **Title Bar Periwinkle** (bar-top to bar-bottom): the vertical gradient on window title bars; bar-top doubles as the plain-button hover.
-- **Field Wash / Field Edge** (field-wash, field-edge): input fill and 1px stroke.
-- **Hairline Lilac** (hairline): dashed and solid dividers inside windows.
-- **Chat Night** (chat-night): translucent dark panel behind the chat box; the plaza lede and footer use the same ink at .78 and .86.
-- **Button Face / Button Edge** (button-face, button-edge): the plain client button.
+- **Night** (`night`): page ground, scrollbar track, opaque mobile menu.
+- **Night Raised** (`night-raised`): input wells, tab track, segmented control, novice label fill (82% alpha).
+- **Graphite** (`graphite`): focused input background; start of the community panel gradient.
+- **Graphite High** (`graphite-high`): checked segment, disabled primary button.
+- **Hairline** (`hairline`) and **Hairline Strong** (`hairline-strong`): every divider, row rule and quiet border; the strong value for table heads, inputs and secondary button borders.
+- **Parchment** (`parchment`): primary text and headings.
+- **Parchment Muted** (`parchment-muted`): ledes, nav links, secondary values, ghost buttons.
+- **Parchment Faint** (`parchment-faint`): hints, table column heads, captions, legal text, rank numbers below first.
 
 ### Named Rules
-**The Client Colour Code Rule.** Each accent keeps the job it has in the game: blue for NPCs and actions, pink for vending and offers, green for chat speakers. Never swap them for decoration.
+**The Gold Means Act Rule.** Gold fills only the primary action and the active tab. Elsewhere gold is a stroke, a numeral or a word, never a surface.
 
-**The Night Panel Rule.** White running text over the plaza always sits on a Chat Night panel; the stone itself is too light (white on stone is 2.4:1).
+**The Crimson Is War Rule.** Crimson appears only in the WoE world and in live or error state. A crimson accent on a generic section is off-system.
 
 ## Typography
 
-**Display Font:** DotGothic16 (with MS Gothic, monospace)
-**Body Font:** Nanum Gothic (with Apple SD Gothic Neo, Malgun Gothic, system-ui)
+**Display Font:** Faculty Glyphic (with Iowan Old Style, Georgia, serif)
+**Body Font:** Onest 400/500/600/700 (with system-ui, -apple-system, Segoe UI, sans-serif)
 
-**Character:** The pixel face is the game speaking: signs, tags, window titles, buttons, NPC names, chat. Nanum Gothic, the client's Korean-heritage gothic, carries anything a visitor reads for more than a line. Both are self-hosted woff2.
+**Character:** A carved, faintly runic serif for names, places and big numbers, paired with a clean contemporary grotesque for everything the player reads to act. Display is always weight 400; emphasis comes from size and gold, never bold.
 
 ### Hierarchy
-- **Display** (400, clamp(3.25rem, 8.4vw, 6rem), 0.98): the giant name tag "Ragnarok Forever" only; white fill with a 0.11em Night Ink stroke painted under the fill.
-- **Headline** (400, clamp(1.75rem, 4vw, 2.75rem), 1.1): section name tags, same outlined treatment at 0.12em; the closing call uses clamp(2.25rem, 6vw, 4rem).
-- **Numeral** (400, clamp(2.25rem, 5vw, 3.25rem), 1, tabular): rate multipliers in Vending Pink.
-- **Title** (400, 0.9375rem, 1.3, +0.02em): window title bars and signboards.
-- **UI** (400, 1rem, 1.2): buttons, NPC names, NPC menu options, chat lines; nav links at 0.875rem.
-- **Body** (400, 1rem, 1.6): running text; rate descriptions cap at 52ch.
-- **Label** (700, 0.875rem, 1.2): form labels and table headers in Slate Ink.
+- **Display** (400, `clamp(3.4rem, 9vw, 6rem)`, 0.92, uppercase, +0.02em): the hero wordmark only, stacked on two lines with the second line in gold. The WoE section title uses the same voice at `clamp(2.6rem, 7vw, 5rem)`/0.95 uppercase.
+- **Numeral** (400, `clamp(5rem, 11vw, 7.5rem)`, 0.85, -0.02em): the rates figure ("5x"), in gold.
+- **Headline** (400, `clamp(2.1rem, 4.6vw, 3.5rem)`, 1.05, -0.01em): section titles. Closing sections scale it up (Download `clamp(2.4rem, 6vw, 4.25rem)`) or down (Community `clamp(2rem, 4.4vw, 3.25rem)`).
+- **Title** (400, `clamp(1.35rem, 2.2vw, 1.75rem)`, 1.15): claim titles; smaller display moments (realm names 1.2rem, fact values 1.35rem, WoE quote up to 1.6rem in muted parchment).
+- **Subhead** (Onest 600, 1.0625rem, 1.3): small block heads like "Estado en vivo", "Próxima WoE", "Castillos".
+- **Body** (Onest 400, 1rem, 1.65): default text; ledes at 1.0625rem in muted parchment with `max-width` 32 to 38rem.
+- **Counter** (Onest 500, `clamp(2rem, 4vw, 2.75rem)`, 1): countdown digits. Live stats use Onest 600 1.5rem with tabular numerals.
+- **Button** (Onest 600, 0.9375rem, +0.01em; 1rem in the large size).
+- **Label** (Onest 500 to 600, 0.75 to 0.8125rem, +0.06 to +0.14em, uppercase): hero meta line, Novice labels, table column heads, countdown units.
 
 ### Named Rules
-**The Two Voices Rule.** If the game would say it, it is DotGothic16; if the website explains it, it is Nanum Gothic. Never set paragraphs in the pixel face outside the chat box.
+**The Two Voices Rule.** Faculty Glyphic names and counts things; Onest instructs. Buttons, forms, tables and stats are never set in the display face.
 
-**The Name Tag Rule.** Headings on the plaza are white text with a Night Ink stroke (`-webkit-text-stroke` plus `paint-order: stroke fill`), like a character name over a sprite. They sit directly on stone, never in a box.
+**The Tabular Truth Rule.** Any changing number (players, uptime, levels, schedule times) uses `font-variant-numeric: tabular-nums`.
 
 ## Layout
 
-The first viewport is a full-bleed plaza: a two-column grid (fluid title column, NPC window column of minmax(20rem, 27rem)) under a slim nav window spanning the top. Signboards are absolutely positioned over the whole plaza from per-sign `--x`/`--y` custom properties, at varied heights, each with a wooden cart and a soft ground shadow beneath it.
+A single centred column, `max-width: calc(76rem + gutter * 2)` with a fluid gutter (`clamp(1.25rem, 5vw, 4.5rem)`). A fixed 4rem nav sits on top; anchor scrolling is offset by nav height plus 1rem. Sections open with `clamp(5rem, 11vw, 9rem)` of space above and a headline block `clamp(2rem, 4vw, 3rem)` from content. Inside sections, content splits into two asymmetric columns (roughly 1.2fr / 1fr, or 0.9fr / 1.4fr in WoE) with `clamp(2rem, 5vw, 5rem)` gaps, and collapses to one column at 900px. Rows inside lists run 1rem vertical padding between hairlines.
 
-Below the fold, sections are capped at 76rem and alternate sides on desktop (left, right, left, right), each a name tag over one window: rates at up to 56rem, the class shop at up to 48rem, chat box at up to 46rem, download window at 30rem. Section rhythm is clamp(3.5rem, 8vw, 6rem) top padding; page gutters are clamp(1rem, 4vw, 4rem).
+The hero is full-bleed and at least `clamp(38rem, 100svh, 60rem)` tall: copy centre-left over a left-to-right shade, castle in the right third, four Novices standing on the foreground ridge in two bands either side of centre. In portrait or under 760px the castle takes the top band (about 52% height, masked out at the bottom), copy sits below it, the primary button goes full width, and the Novices become a four-column dock with labels always visible. The nav collapses to a menu button at 860px; the mobile menu is an opaque drop panel of 1.0625rem links divided by hairlines.
 
-Under 900px the plaza collapses to one column: nav window stacks title bar over links, signboards become an inline wrapped cluster of three (the extra three hide, carts and bob are dropped), and the NPC window goes full width. Under 560px form pairs and rate rows stack, and the class table drops its weapon column.
+Breakpoints in use: 560px (single-column forms and lists, full-width tabs), 760px (portrait hero, footer stack), 860px (nav), 900px (two-column sections collapse), 1100px (larger Novices).
 
 ## Elevation & Depth
 
-The UI is flat. No window, button or sign carries a box-shadow. Depth belongs to the world: the cobble tile, the evening overlay (a top-down navy wash plus a warm radial glow at the upper right), windows laid over stone, and soft radial ground shadows under the vending carts.
+Flat and tonal. Depth comes from the night ground stepping to graphite, from hairlines, and from the hero's layered SVG with parallax; it does not come from shadows on surfaces. The one structural shadow is a soft warm under-glow beneath the gold primary button. The scrolled nav uses a translucent night fill with backdrop blur. Focus and state are drawn with rings and outlines, not lifts.
 
 ### Shadow Vocabulary
-- **Cart ground shadow** (`radial-gradient(closest-side, rgba(27,33,52,.38), transparent)`, 3.5rem by 1.1rem): under each cart on desktop only.
+- **Gold under-glow** (`box-shadow: 0 8px 24px -10px rgba(212, 176, 106, 0.55)`; hover `0 10px 28px -10px rgba(232, 204, 143, 0.7)`): primary button only.
+- **Focus well** (`box-shadow: 0 0 0 3px rgba(212, 176, 106, 0.18)`): focused input, with gold border.
+- **Status halo** (`box-shadow: 0 0 0 4px rgba(108, 197, 138, 0.15)`, crimson equivalent when offline): the live status dot.
 
 ### Named Rules
-**The Flat Client Rule.** Interface chrome is framed, not lifted: a 1px Window Frame Navy border does the work a shadow would. Only things standing on the ground cast a shadow, and only onto the ground.
+**The Hairline Not Box Rule.** Separate content with 1px rules at `hairline` or `hairline-strong`. Reach for a filled container only for controls (inputs, tab track, segmented control) or one closing call to action.
+
+**The Scene Carries Depth Rule.** Atmospheric gradients, glows, smoke and embers live in the authored scene and the WoE band. UI surfaces stay flat.
 
 ## Shapes
 
-Small, gentle corners everywhere, matching the client's slightly rounded bitmaps: 4px on windows and panels, 3px on buttons, signs and fields, 5px on the primary button (with a 2px frame), 2px on chips. Borders are 1px hairlines; dividers inside windows are dashed. Window title bars round only their top corners and close with a 1px frame line. Icons are inline SVG line drawings (1.8 stroke, round caps) from one sprite; the cart is a small authored colour illustration.
+Gently rounded and consistent: 6px for small interactive targets (nav links, segments), 8px for buttons, inputs, the segmented control and confirmation notes, 10px for the tab track with 7px tab ink inside it, full pills for metadata badges and Novice labels, and 18px for the single community panel. Default focus outlines are 2px gold at a 3px offset with a 4px radius. Dividers are always 1px, except the 2px crimson rule over countdown units. Icons are an authored 24px-grid line set at 1.6 stroke with round caps and joins, sized 16 to 22px and coloured by `currentColor`. The brand mark is a nested diamond.
 
 ## Components
 
-### Client Window
-Plain, framed, utilitarian.
-- **Frame:** Window Paper body, 1px Window Frame Navy border, 4px corners.
-- **Title bar:** Title-scale pixel text on the periwinkle gradient, 1px frame line beneath; it names the window ("Kafra", "Información del servidor", "Descarga").
-- **Body padding:** 1rem to 1.25rem; a tinted footer strip (#f2f4fc) may close a window with a hairline above.
-
 ### Buttons
-- **Primary:** NPC Name Blue pixel text, 2px blue frame, 5px corners, white-to-periwinkle vertical gradient, 0.55rem 1.1rem (big: 0.8rem 1.6rem at 1.25rem).
-- **Hover:** fills solid blue gradient with white text. **Active:** nudges down 1px. **Busy:** 0.7 opacity, progress cursor.
-- **Plain:** grey-blue client button (white to Button Face gradient, 1px Button Edge, 3px), hover to bar-top. Defined in CSS; the current page ships only primary buttons.
+Calm, solid, and specific: one filled voice, one outlined, one textual.
+- **Shape:** gently rounded (`rounded.md`), minimum 2.75rem tall (3.25rem large), optional 18px leading icon with a 0.55rem gap.
+- **Primary:** gold fill with gold ink text and the gold under-glow. Use it for the main action in a viewport or block: "Jugar ahora" in the hero, "Jugar" in the nav, the form submit and the Download and Discord calls to action.
+- **Secondary:** transparent night fill (35%) with a `hairline-strong` border; hover raises the border to 45% parchment and adds a 6% parchment wash.
+- **Ghost:** muted text only, tight 0.5rem inline padding; hover returns to full parchment.
+- **Hover / Active:** scale to 1.02 on hover and 0.98 on press, over `--fast` (160ms) with the house ease-out.
+- **Pending (unavailable):** a real disabled button at 55% opacity (primary drops to graphite with muted text), with a 0.8125rem faint note beneath saying why. Never a fake working link.
 
-### Vending Signboard (signature)
-- **Style:** Window Paper, 1px frame, 3px corners, Title-scale pixel text prefixed with the client's own "S>" (selling) or "B>" (buying) marker and a pink cart glyph.
-- **Featured:** one sign at most in solid Vending Pink with a Vending Pink Deep frame.
-- **Behaviour:** links to the section that "sells" the fact; bobs 4px over 3.6s ease-in-out with staggered delays; hover washes to Vending Blush. Motion stops under reduced motion.
+### Chips (sample badge)
+- **Style:** 1px dashed `hairline-strong` pill, muted text at 0.75rem/500 with +0.04em tracking. It marks any illustrative data ("Datos de ejemplo", "Horario de ejemplo") and sits beside the block head it qualifies.
+
+### Cards / Containers
+- Content is not carded. The only filled panel is the closing Community block: `rounded.panel`, a 135° graphite-to-night-raised wash, 1px hairline border, `clamp(2rem, 5vw, 3.5rem)` padding.
 
 ### Inputs / Fields
-- **Style:** Field Wash fill, 1px Field Edge, 3px corners, body-face text; label above in Label style, hint below at 0.8125rem.
-- **Focus:** 2px NPC Name Blue outline, fill turns white.
-- **Error:** Vending Pink border on Vending Blush, with one message in the status line above the submit button.
-
-### NPC Dialog
-A client window whose body opens with the NPC's bracketed name in blue pixel text, then a dialog line that types out once (2 characters per 22ms, skipped under reduced motion), then the form, then a dashed-rule menu of chevron options in pixel text.
-
-### Chat Box
-Chat Night panel, 4px corners, pixel text at 1rem/1.7 in white; speaker names in Chat Green, links in pale periwinkle (#b9c7ff), closing system line in System Gold.
-
-### Chips
-Vending Pink, white pixel text at 0.875rem, 2px corners; used inline as a label inside a window, never above a heading.
+- **Style:** night-raised well, 1px `hairline-strong` border, `rounded.md`, 3rem minimum height, 1rem Onest text; labels sit above at 0.875rem/500 in muted parchment, hints below at 0.8125rem in faint parchment.
+- **Hover:** border rises to 32% parchment.
+- **Focus:** gold border, graphite fill, 3px gold focus well; the default outline is suppressed only here.
+- **Error:** crimson border; form messages sit in a polite live region.
+- **Segmented control:** a night-raised track with 0.25rem padding; the checked option fills graphite-high with full parchment text; focus shows a 2px gold outline.
 
 ### Navigation
-A slim client window: title bar holding the server name on the left, pixel links at 0.875rem to the right; hover turns links blue and underlined. On mobile the title bar stacks above the links.
+- **Top bar:** fixed, transparent over the hero; after 24px of scroll it turns 78% night with a 14px blur and a hairline bottom. Wordmark in Faculty Glyphic 1.125rem with "Forever" in gold, behind the gold diamond mark.
+- **Links:** Onest 500 0.875rem, +0.04em, muted; hover and the section in view (`aria-current`) turn full parchment and draw a 1px gold underline that scales in from the left over 220ms.
+- **Actions:** a muted Discord text link with icon and a compact primary "Jugar" button (2.4rem).
+- **Mobile:** below 860px a 2.75rem menu button opens an opaque night panel that slides 8px down and fades in; Escape closes it and returns focus.
+
+### Tabs (Rankings)
+- A night-raised track with a hairline border; the selected tab is shown by a gold ink slab that slides and resizes between tabs (260ms ease-out) under gold-ink text. Tables beneath use uppercase faint column heads over a strong hairline, 1rem row padding, a 3% parchment row hover, display-face rank numbers, and a larger gold first place.
+
+### Novice Guides (signature)
+Four authored SVG Novices (shared body, varied hair colour, facing centre) are the hero's navigation to Servidor, WoE, Rankings and Descargar. Each idles with a slow breathe, sway and blink on staggered delays. With a fine pointer their eyes and head follow the cursor. On hover they hop (480ms squash and stretch), raise an arm, show a soft gold ground glow, and bring their pill label to full opacity with a gold-tinted border. On click one salutes and leaps, and the page scrolls to its section after 260ms. Labels carry a gold line icon and uppercase Onest. A `sprite` prop swaps the SVG for a raster without changing behaviour. All idle and hover motion stops under reduced motion.
+
+### Siege Scene (signature)
+The hero background is layered authored SVG (sky gradient with a crimson and amber glow under the castle, far hills, castle silhouette with lit windows, waving crimson banners, flickering wall fires, drifting smoke, arcing fire shots, a near ridge with a gold-to-amber rim line) plus an ember canvas (16 particles on mobile, 34 on desktop). Layers parallax with the pointer and with scroll by depth. A night shade on the left (or bottom in portrait) protects the copy. The WoE section echoes it with a crimson-washed band and dark castle silhouettes at its base.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** put every new block of content inside a client window or the chat box, framed in 1px Window Frame Navy with a periwinkle title bar.
-- **Do** keep the accents on their game jobs: NPC Name Blue for actions and NPC names, Vending Pink for offers and numerals, Chat Green for chat speakers.
-- **Do** head plaza sections with outlined white name tags in DotGothic16.
-- **Do** use the cobble tile (220px by 110px) as the only page background.
-- **Do** place white text on the plaza only over a Chat Night panel.
-- **Do** stop the signboard bob and NPC typing under `prefers-reduced-motion`.
+- **Do** keep gold to the primary action, the active tab, key numerals, the wordmark accent and focus.
+- **Do** keep crimson to the WoE world, the offline state and invalid fields.
+- **Do** divide lists and stats with 1px hairlines and let section spacing (`clamp(5rem, 11vw, 9rem)`) do the grouping.
+- **Do** set names, titles and big numbers in Faculty Glyphic at weight 400, and every control, form, table and stat in Onest.
+- **Do** mark illustrative data with the dashed sample badge, and render unavailable actions as disabled buttons with a note.
+- **Do** draw icons from the single-stroke 24px set (1.6 stroke, round caps) and colour them with `currentColor`.
+- **Do** ease all state changes with `cubic-bezier(0.16, 1, 0.3, 1)` at 160 to 260ms, and switch off animation under `prefers-reduced-motion`.
 
 ### Don't:
-- **Don't** add drop shadows to windows, buttons or signboards; only grounded objects cast shadows.
-- **Don't** use a dark epic hero, gold serif type, a large character render, or a row of rate cards.
-- **Don't** set paragraphs in DotGothic16 outside the chat box.
-- **Don't** show invented player counts, uptime, launch dates or reviews on signboards or anywhere else.
-- **Don't** feature more than one signboard in solid Vending Pink.
+- **Don't** build grids of feature cards or glassy panels; content lives in ruled rows and columns.
+- **Don't** add drop shadows to surfaces; the gold under-glow belongs to the primary button alone.
+- **Don't** put gradients on controls or text; gradients belong to the scene, the WoE band and the one closing panel.
+- **Don't** bold the display face or set body copy in it.
+- **Don't** introduce another accent hue; new states reuse gold, crimson or green by meaning.

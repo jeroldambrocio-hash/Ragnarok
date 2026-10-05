@@ -1,0 +1,27 @@
+---
+interface Props { id: string; title: string; lede?: string; class?: string }
+const { id, title, lede, class: cls } = Astro.props;
+---
+<section id={id} class:list={["section", cls]} aria-labelledby={`${id}-title`}>
+  <div class="wrap">
+    <header class="section-head">
+      <h2 id={`${id}-title`}>{title}</h2>
+      {lede && <p class="section-lede">{lede}</p>}
+      <slot name="aside" />
+    </header>
+    <slot />
+  </div>
+</section>
+<style is:global>
+  .section { padding-block: clamp(5rem, 11vw, 9rem) 0; }
+  .section-head {
+    display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.75rem 1.5rem;
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+  }
+  .section-head h2 {
+    flex-basis: 100%;
+    font: 400 clamp(2.1rem, 4.6vw, 3.5rem)/1.05 var(--display);
+    letter-spacing: -0.01em;
+  }
+  .section-lede { max-width: 38rem; color: var(--text-2); font-size: 1.0625rem; }
+</style>

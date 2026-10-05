@@ -1,0 +1,46 @@
+---
+import Section from "./Section.astro";
+const reasons = [
+  { title: "Juego equilibrado", text: "Clases y builds viables. Ninguna dominará el servidor." },
+  { title: "Sin pay-to-win", text: "Lo que se gana jugando no se compra con dinero." },
+  { title: "War of Emperium", text: "Guerras de guilds semanales por los castillos de Rune-Midgard." },
+  { title: "Experiencia clásica", text: "Pre-renewal de verdad: mapas, fórmulas y ritmo de siempre." },
+  { title: "Anti-cheat", text: "Protección contra bots y programas externos." },
+  { title: "Actualizaciones frecuentes", text: "Correcciones y eventos de forma regular." },
+];
+---
+<Section id="por-que" title="Por qué Ragnarok Forever" class="why">
+  <ol class="claims">
+    {reasons.map((r) => (
+      <li class="claim">
+        <h3>{r.title}</h3>
+        <p>{r.text}</p>
+      </li>
+    ))}
+  </ol>
+</Section>
+
+<style>
+  .claims {
+    columns: 2;
+    column-gap: clamp(2rem, 6vw, 6rem);
+    margin: 0; padding: 0; list-style: none;
+  }
+  .claim {
+    break-inside: avoid;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 0.25rem 1.5rem;
+    align-items: baseline;
+    padding: 1.35rem 0;
+    border-top: 1px solid var(--line);
+  }
+  .claim h3 {
+    font: 400 clamp(1.35rem, 2.2vw, 1.75rem)/1.15 var(--display);
+    transition: color var(--fast), transform 220ms var(--ease-out);
+  }
+  .claim:hover h3 { color: var(--gold); transform: translateX(4px); }
+  .claim p { color: var(--text-2); font-size: 0.9375rem; }
+  @media (max-width: 900px) { .claims { columns: 1; } }
+  @media (max-width: 560px) { .claim { grid-template-columns: 1fr; } }
+</style>

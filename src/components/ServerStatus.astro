@@ -1,0 +1,84 @@
+---
+import Section from "./Section.astro";
+import SampleBadge from "./SampleBadge.astro";
+import { facts, sampleStatus } from "../data/server";
+import { config } from "../config";
+const nf = new Intl.NumberFormat("es");
+const values = new Set(facts.rates.map((r) => r.value));
+const uniform = values.size === 1 && facts.rates[0].value;
+---
+<Section id="servidor" title="El servidor, de un vistazo" lede="Ragnarok Online como lo recuerdas: mapas, fórmulas y clases pre-renewal, con un ritmo de progreso más ágil.">
+  <div class="status" data-status data-api={config.statusApi}>
+    <div class="status-rates">
+      {uniform ? (
+        <p class="rates-line"><span class="rates-big">{uniform}</span><span class="rates-what">en todo:<br />{facts.rates.map((r, i) => <Fragment><span class="nb">{r.label}{i < facts.rates.length - 1 ? " ·" : ""}</span>{" "}</Fragment>)}</span></p>
+      ) : (
+        <dl class="rates-list">{facts.rates.map((r) => <div><dt>{r.label}</dt><dd>{r.value ?? "Por anunciar"}</dd></div>)}</dl>
+      )}
+      <dl class="facts">
+        <div><dt>Modo</dt><dd>Pre-renewal</dd></div>
+        <div><dt>Episodio</dt><dd>{facts.episode ?? "Por anunciar"}</dd></div>
+      </dl>
+    </div>
+
+    <div class="status-live">
+      <div class="status-live-head">
+        <h3 class="sub">Estado en vivo</h3>
+        <span data-status-sample><SampleBadge /></span>
+      </div>
+      <dl class="stats">
+        <div class="stat">
+          <dt>Estado</dt>
+          <dd><span class="dot" data-online={String(sampleStatus.online)}></span><span data-status-online>{sampleStatus.online ? "En línea" : "Fuera de línea"}</span></dd>
+        </div>
+        <div class="stat">
+          <dt>Jugadores</dt>
+          <dd class="num" data-status-players>{nf.format(sampleStatus.players)}</dd>
+        </div>
+        <div class="stat">
+          <dt>Uptime</dt>
+          <dd class="num" data-status-uptime>{sampleStatus.uptime}%</dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</Section>
+
+<script>
+  import "../scripts/status.ts";
+</script>
+
+<style>
+  .status {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    gap: clamp(2rem, 6vw, 6rem);
+    align-items: start;
+  }
+  :global(.sub) { font: 600 1.0625rem/1.3 var(--sans); color: var(--text); }
+  .rates-line { display: flex; align-items: center; gap: 1.5rem; }
+  .rates-big { font: 400 clamp(5rem, 11vw, 7.5rem)/0.85 var(--display); color: var(--gold); letter-spacing: -0.02em; }
+  .rates-what { min-width: 0; font-size: 1.0625rem; color: var(--text-2); line-height: 1.5; }
+  .rates-list { display: flex; flex-wrap: wrap; gap: 1rem 2rem; margin: 0; }
+  .rates-list dd { margin: 0; font: 400 2.5rem/1 var(--display); color: var(--gold); }
+  .facts { display: flex; gap: 3rem; margin: 2rem 0 0; padding-top: 1.25rem; border-top: 1px solid var(--line); }
+  .facts dt { font-size: 0.875rem; color: var(--text-3); }
+  .facts dd { margin: 0.25rem 0 0; font: 400 1.35rem/1.2 var(--display); }
+
+  .status-live-head { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+  .stats { margin: 0.75rem 0 0; }
+  .stat {
+    display: flex; align-items: baseline; justify-content: space-between; gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .stat dt { color: var(--text-2); }
+  .stat dd { margin: 0; display: inline-flex; align-items: center; gap: 0.55rem; font-weight: 600; }
+  .num { font-variant-numeric: tabular-nums; }
+  .nb { white-space: nowrap; }
+  .stat .num { font: 600 1.5rem/1 var(--sans); }
+  .dot { width: 0.6rem; height: 0.6rem; border-radius: 50%; background: var(--online); box-shadow: 0 0 0 4px rgba(108, 197, 138, 0.15); }
+  .dot[data-online="false"] { background: var(--crimson); box-shadow: 0 0 0 4px rgba(194, 58, 69, 0.15); }
+
+  @media (max-width: 900px) { .status { grid-template-columns: 1fr; } }
+</style>
