@@ -1,0 +1,516 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-05T03:50:55+00:00",
+  "title": "Design System: Ragnarok Forever",
+  "extensions": {
+    "colorMeta": {
+      "stone": {
+        "role": "neutral",
+        "displayName": "Plaza Stone",
+        "canonical": "#a3a8b5",
+        "tonalRamp": [
+          "oklch(15% 0.020 269.0)",
+          "oklch(26% 0.020 269.0)",
+          "oklch(37% 0.020 269.0)",
+          "oklch(48% 0.020 269.0)",
+          "oklch(59% 0.020 269.0)",
+          "oklch(70% 0.020 269.0)",
+          "oklch(82% 0.020 269.0)",
+          "oklch(95% 0.020 269.0)"
+        ]
+      },
+      "stone-seam": {
+        "role": "neutral",
+        "displayName": "Stone Seam",
+        "canonical": "#939aa9",
+        "tonalRamp": [
+          "oklch(15% 0.023 265.7)",
+          "oklch(26% 0.023 265.7)",
+          "oklch(37% 0.023 265.7)",
+          "oklch(48% 0.023 265.7)",
+          "oklch(59% 0.023 265.7)",
+          "oklch(70% 0.023 265.7)",
+          "oklch(82% 0.023 265.7)",
+          "oklch(95% 0.023 265.7)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Night Ink",
+        "canonical": "#1b2134",
+        "tonalRamp": [
+          "oklch(15% 0.037 270.2)",
+          "oklch(26% 0.037 270.2)",
+          "oklch(37% 0.037 270.2)",
+          "oklch(48% 0.037 270.2)",
+          "oklch(59% 0.037 270.2)",
+          "oklch(70% 0.037 270.2)",
+          "oklch(82% 0.037 270.2)",
+          "oklch(95% 0.037 270.2)"
+        ]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Slate Ink",
+        "canonical": "#3c4560",
+        "tonalRamp": [
+          "oklch(15% 0.047 269.9)",
+          "oklch(26% 0.047 269.9)",
+          "oklch(37% 0.047 269.9)",
+          "oklch(48% 0.047 269.9)",
+          "oklch(59% 0.047 269.9)",
+          "oklch(70% 0.047 269.9)",
+          "oklch(82% 0.047 269.9)",
+          "oklch(95% 0.047 269.9)"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Window Paper",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "oklch(15% 0.000 89.9)",
+          "oklch(26% 0.000 89.9)",
+          "oklch(37% 0.000 89.9)",
+          "oklch(48% 0.000 89.9)",
+          "oklch(59% 0.000 89.9)",
+          "oklch(70% 0.000 89.9)",
+          "oklch(82% 0.000 89.9)",
+          "oklch(95% 0.000 89.9)"
+        ]
+      },
+      "win-frame": {
+        "role": "neutral",
+        "displayName": "Window Frame Navy",
+        "canonical": "#44538a",
+        "tonalRamp": [
+          "oklch(15% 0.092 270.9)",
+          "oklch(26% 0.092 270.9)",
+          "oklch(37% 0.092 270.9)",
+          "oklch(48% 0.092 270.9)",
+          "oklch(59% 0.092 270.9)",
+          "oklch(70% 0.092 270.9)",
+          "oklch(82% 0.092 270.9)",
+          "oklch(95% 0.092 270.9)"
+        ]
+      },
+      "bar-top": {
+        "role": "neutral",
+        "displayName": "Title Bar Periwinkle (top)",
+        "canonical": "#dde3fb",
+        "tonalRamp": [
+          "oklch(15% 0.033 274.6)",
+          "oklch(26% 0.033 274.6)",
+          "oklch(37% 0.033 274.6)",
+          "oklch(48% 0.033 274.6)",
+          "oklch(59% 0.033 274.6)",
+          "oklch(70% 0.033 274.6)",
+          "oklch(82% 0.033 274.6)",
+          "oklch(95% 0.033 274.6)"
+        ]
+      },
+      "bar-bottom": {
+        "role": "neutral",
+        "displayName": "Title Bar Periwinkle (bottom)",
+        "canonical": "#b3c0ee",
+        "tonalRamp": [
+          "oklch(15% 0.067 272.5)",
+          "oklch(26% 0.067 272.5)",
+          "oklch(37% 0.067 272.5)",
+          "oklch(48% 0.067 272.5)",
+          "oklch(59% 0.067 272.5)",
+          "oklch(70% 0.067 272.5)",
+          "oklch(82% 0.067 272.5)",
+          "oklch(95% 0.067 272.5)"
+        ]
+      },
+      "field-wash": {
+        "role": "neutral",
+        "displayName": "Field Wash",
+        "canonical": "#f4f6fd",
+        "tonalRamp": [
+          "oklch(15% 0.010 273.4)",
+          "oklch(26% 0.010 273.4)",
+          "oklch(37% 0.010 273.4)",
+          "oklch(48% 0.010 273.4)",
+          "oklch(59% 0.010 273.4)",
+          "oklch(70% 0.010 273.4)",
+          "oklch(82% 0.010 273.4)",
+          "oklch(95% 0.010 273.4)"
+        ]
+      },
+      "field-edge": {
+        "role": "neutral",
+        "displayName": "Field Edge",
+        "canonical": "#9aa5cc",
+        "tonalRamp": [
+          "oklch(15% 0.058 272.6)",
+          "oklch(26% 0.058 272.6)",
+          "oklch(37% 0.058 272.6)",
+          "oklch(48% 0.058 272.6)",
+          "oklch(59% 0.058 272.6)",
+          "oklch(70% 0.058 272.6)",
+          "oklch(82% 0.058 272.6)",
+          "oklch(95% 0.058 272.6)"
+        ]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline Lilac",
+        "canonical": "#c3cae6",
+        "tonalRamp": [
+          "oklch(15% 0.040 274.4)",
+          "oklch(26% 0.040 274.4)",
+          "oklch(37% 0.040 274.4)",
+          "oklch(48% 0.040 274.4)",
+          "oklch(59% 0.040 274.4)",
+          "oklch(70% 0.040 274.4)",
+          "oklch(82% 0.040 274.4)",
+          "oklch(95% 0.040 274.4)"
+        ]
+      },
+      "npc-blue": {
+        "role": "primary",
+        "displayName": "NPC Name Blue",
+        "canonical": "#2440c4",
+        "tonalRamp": [
+          "oklch(15% 0.200 267.2)",
+          "oklch(26% 0.200 267.2)",
+          "oklch(37% 0.200 267.2)",
+          "oklch(48% 0.200 267.2)",
+          "oklch(59% 0.200 267.2)",
+          "oklch(70% 0.200 267.2)",
+          "oklch(82% 0.200 267.2)",
+          "oklch(95% 0.200 267.2)"
+        ]
+      },
+      "vend-pink": {
+        "role": "secondary",
+        "displayName": "Vending Pink",
+        "canonical": "#c42a62",
+        "tonalRamp": [
+          "oklch(15% 0.192 4.9)",
+          "oklch(26% 0.192 4.9)",
+          "oklch(37% 0.192 4.9)",
+          "oklch(48% 0.192 4.9)",
+          "oklch(59% 0.192 4.9)",
+          "oklch(70% 0.192 4.9)",
+          "oklch(82% 0.192 4.9)",
+          "oklch(95% 0.192 4.9)"
+        ]
+      },
+      "vend-pink-deep": {
+        "role": "secondary",
+        "displayName": "Vending Pink Deep",
+        "canonical": "#8e1743",
+        "tonalRamp": [
+          "oklch(15% 0.155 5.4)",
+          "oklch(26% 0.155 5.4)",
+          "oklch(37% 0.155 5.4)",
+          "oklch(48% 0.155 5.4)",
+          "oklch(59% 0.155 5.4)",
+          "oklch(70% 0.155 5.4)",
+          "oklch(82% 0.155 5.4)",
+          "oklch(95% 0.155 5.4)"
+        ]
+      },
+      "vend-soft": {
+        "role": "secondary",
+        "displayName": "Vending Blush",
+        "canonical": "#fde4ee",
+        "tonalRamp": [
+          "oklch(15% 0.030 351.5)",
+          "oklch(26% 0.030 351.5)",
+          "oklch(37% 0.030 351.5)",
+          "oklch(48% 0.030 351.5)",
+          "oklch(59% 0.030 351.5)",
+          "oklch(70% 0.030 351.5)",
+          "oklch(82% 0.030 351.5)",
+          "oklch(95% 0.030 351.5)"
+        ]
+      },
+      "chat-night": {
+        "role": "neutral",
+        "displayName": "Chat Night",
+        "canonical": "rgba(18, 22, 38, .82)",
+        "tonalRamp": [
+          "oklch(15% 0.033 272.5)",
+          "oklch(26% 0.033 272.5)",
+          "oklch(37% 0.033 272.5)",
+          "oklch(48% 0.033 272.5)",
+          "oklch(59% 0.033 272.5)",
+          "oklch(70% 0.033 272.5)",
+          "oklch(82% 0.033 272.5)",
+          "oklch(95% 0.033 272.5)"
+        ]
+      },
+      "chat-green": {
+        "role": "tertiary",
+        "displayName": "Chat Green",
+        "canonical": "#8ff08a",
+        "tonalRamp": [
+          "oklch(15% 0.165 143.0)",
+          "oklch(26% 0.165 143.0)",
+          "oklch(37% 0.165 143.0)",
+          "oklch(48% 0.165 143.0)",
+          "oklch(59% 0.165 143.0)",
+          "oklch(70% 0.165 143.0)",
+          "oklch(82% 0.165 143.0)",
+          "oklch(95% 0.165 143.0)"
+        ]
+      },
+      "system-gold": {
+        "role": "tertiary",
+        "displayName": "System Gold",
+        "canonical": "#ffd36b",
+        "tonalRamp": [
+          "oklch(15% 0.132 86.6)",
+          "oklch(26% 0.132 86.6)",
+          "oklch(37% 0.132 86.6)",
+          "oklch(48% 0.132 86.6)",
+          "oklch(59% 0.132 86.6)",
+          "oklch(70% 0.132 86.6)",
+          "oklch(82% 0.132 86.6)",
+          "oklch(95% 0.132 86.6)"
+        ]
+      },
+      "button-face": {
+        "role": "neutral",
+        "displayName": "Button Face",
+        "canonical": "#e6eaf7",
+        "tonalRamp": [
+          "oklch(15% 0.018 272.3)",
+          "oklch(26% 0.018 272.3)",
+          "oklch(37% 0.018 272.3)",
+          "oklch(48% 0.018 272.3)",
+          "oklch(59% 0.018 272.3)",
+          "oklch(70% 0.018 272.3)",
+          "oklch(82% 0.018 272.3)",
+          "oklch(95% 0.018 272.3)"
+        ]
+      },
+      "button-edge": {
+        "role": "neutral",
+        "displayName": "Button Edge",
+        "canonical": "#6b78a8",
+        "tonalRamp": [
+          "oklch(15% 0.076 272.2)",
+          "oklch(26% 0.076 272.2)",
+          "oklch(37% 0.076 272.2)",
+          "oklch(48% 0.076 272.2)",
+          "oklch(59% 0.076 272.2)",
+          "oklch(70% 0.076 272.2)",
+          "oklch(82% 0.076 272.2)",
+          "oklch(95% 0.076 272.2)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Name Tag Display",
+        "purpose": "The giant outlined server name over the plaza only."
+      },
+      "headline": {
+        "displayName": "Name Tag Headline",
+        "purpose": "Outlined section headings on stone."
+      },
+      "numeral": {
+        "displayName": "Rate Numeral",
+        "purpose": "Rate multipliers in Vending Pink."
+      },
+      "title": {
+        "displayName": "Window Title",
+        "purpose": "Window title bars and signboards."
+      },
+      "ui": {
+        "displayName": "Game UI",
+        "purpose": "Buttons, NPC names, menu options, chat lines."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running text, form values."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Form labels and table headers."
+      }
+    },
+    "shadows": [
+      {
+        "name": "cart-ground",
+        "value": "radial-gradient(closest-side, rgba(27, 33, 52, .38), rgba(27, 33, 52, 0))",
+        "purpose": "Soft ground shadow under each vending cart (3.5rem by 1.1rem), desktop only. UI chrome has no shadows."
+      }
+    ],
+    "motion": [
+      {
+        "name": "sign-bob",
+        "value": "translateY(0 to -4px), 3.6s ease-in-out infinite, staggered negative delays",
+        "purpose": "Idle float of signboards, like the client floating titles; off under reduced motion."
+      },
+      {
+        "name": "npc-type",
+        "value": "2 characters per 22ms after a 350ms delay, once",
+        "purpose": "NPC dialog line types out; skipped under reduced motion."
+      },
+      {
+        "name": "state",
+        "value": "background-color .15s; transform .1s",
+        "purpose": "Button and sign hover; 1px press on active."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "plaza",
+        "value": "900px",
+        "purpose": "Scattered signboards, carts and two-column plaza at and above."
+      },
+      {
+        "name": "compact",
+        "value": "560px",
+        "purpose": "Below: form pairs and rate rows stack, class table drops a column."
+      }
+    ],
+    "background": {
+      "tile": "assets/img/cobble.svg",
+      "size": "220px 110px",
+      "evening": "radial-gradient(ellipse 60% 45% at 78% 0%, rgba(255,196,120,.22), transparent 70%), linear-gradient(180deg, rgba(30,34,74,.55), rgba(30,34,74,.12) 55%, transparent 85%)"
+    }
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one action per window: create account, download client.",
+      "html": "<button class=\"ds-btn-primary\">Crear cuenta</button>",
+      "css": ":host{--stone:#a3a8b5;--ink:#1b2134;--ink-soft:#3c4560;--paper:#fff;--win-frame:#44538a;--bar-top:#dde3fb;--bar-bottom:#b3c0ee;--npc:#2440c4;--vend:#c42a62;--vend-soft:#fde4ee;--chat-bg:rgba(18,22,38,.82);--chat-green:#8ff08a;--btn:#e6eaf7;--btn-edge:#6b78a8;--pixel:'DotGothic16','MS Gothic',monospace;--text:'Nanum Gothic','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;--radius:4px} .ds-btn-primary{display:inline-flex;align-items:center;gap:.5em;padding:.55rem 1.1rem;font:400 1.0625rem/1.2 var(--pixel);color:var(--npc);border:2px solid var(--npc);border-radius:5px;background:linear-gradient(#fff 0%,#e9edfb 55%,#c9d3f3 100%);cursor:pointer;transition:background-color .15s,transform .1s} .ds-btn-primary:hover{color:#fff;background:linear-gradient(#4a63d8,var(--npc))} .ds-btn-primary:active{transform:translateY(1px)} .ds-btn-primary:focus-visible{outline:2px solid var(--vend);outline-offset:2px}"
+    },
+    {
+      "name": "Plain Client Button",
+      "kind": "button",
+      "refersTo": "button",
+      "description": "Grey-blue client button for secondary actions (defined, not yet shipped on the page).",
+      "html": "<button class=\"ds-btn\">Cancelar</button>",
+      "css": ":host{--stone:#a3a8b5;--ink:#1b2134;--ink-soft:#3c4560;--paper:#fff;--win-frame:#44538a;--bar-top:#dde3fb;--bar-bottom:#b3c0ee;--npc:#2440c4;--vend:#c42a62;--vend-soft:#fde4ee;--chat-bg:rgba(18,22,38,.82);--chat-green:#8ff08a;--btn:#e6eaf7;--btn-edge:#6b78a8;--pixel:'DotGothic16','MS Gothic',monospace;--text:'Nanum Gothic','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;--radius:4px} .ds-btn{display:inline-flex;align-items:center;gap:.5em;padding:.55rem 1.1rem;font:400 1rem/1.2 var(--pixel);color:var(--ink);background:linear-gradient(#fff,var(--btn));border:1px solid var(--btn-edge);border-radius:3px;cursor:pointer;transition:background-color .15s,transform .1s} .ds-btn:hover{background:var(--bar-top)} .ds-btn:active{transform:translateY(1px)} .ds-btn:focus-visible{outline:2px solid var(--vend);outline-offset:2px}"
+    },
+    {
+      "name": "Client Window",
+      "kind": "card",
+      "refersTo": "window",
+      "description": "The container for every content block: white body, navy hairline frame, periwinkle title bar.",
+      "html": "<div class=\"ds-win\" style=\"max-width:22rem\"><p class=\"ds-win-bar\">Información del servidor</p><p class=\"ds-win-body\">Mecánicas, mapas y fórmulas clásicas, antes de la actualización Renewal.</p></div>",
+      "css": ":host{--stone:#a3a8b5;--ink:#1b2134;--ink-soft:#3c4560;--paper:#fff;--win-frame:#44538a;--bar-top:#dde3fb;--bar-bottom:#b3c0ee;--npc:#2440c4;--vend:#c42a62;--vend-soft:#fde4ee;--chat-bg:rgba(18,22,38,.82);--chat-green:#8ff08a;--btn:#e6eaf7;--btn-edge:#6b78a8;--pixel:'DotGothic16','MS Gothic',monospace;--text:'Nanum Gothic','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;--radius:4px} .ds-win{background:var(--paper,#fff);border:1px solid var(--win-frame,#44538a);border-radius:var(--radius,4px);color:var(--ink,#1b2134)} .ds-win-bar{margin:0;padding:.3rem .7rem .25rem;font:400 .9375rem/1.3 var(--pixel);letter-spacing:.02em;background:linear-gradient(var(--bar-top),var(--bar-bottom));border-bottom:1px solid var(--win-frame);border-radius:var(--radius) var(--radius) 0 0} .ds-win-body{margin:0;padding:1rem 1.25rem;font:400 1rem/1.6 var(--text)}"
+    },
+    {
+      "name": "Vending Signboard",
+      "kind": "custom",
+      "refersTo": "signboard",
+      "description": "Signature: a confirmed fact floating over the plaza as a merchant shop title, linking to its section.",
+      "html": "<div class=\"ds-signs\"><a class=\"ds-sign\" href=\"#\"><svg viewBox=\"0 0 24 24\" width=\"17\" height=\"17\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M2.5 4h3l2.2 10.2h10.6L20.5 7H7\"/><circle cx=\"9\" cy=\"18.5\" r=\"1.8\"/><circle cx=\"17\" cy=\"18.5\" r=\"1.8\"/></svg>S&gt; Exp base x5</a> <a class=\"ds-sign ds-sign--pink\" href=\"#\"><svg viewBox=\"0 0 24 24\" width=\"17\" height=\"17\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M2.5 4h3l2.2 10.2h10.6L20.5 7H7\"/><circle cx=\"9\" cy=\"18.5\" r=\"1.8\"/><circle cx=\"17\" cy=\"18.5\" r=\"1.8\"/></svg>S&gt; Pre-renewal clásico</a></div>",
+      "css": ":host{--stone:#a3a8b5;--ink:#1b2134;--ink-soft:#3c4560;--paper:#fff;--win-frame:#44538a;--bar-top:#dde3fb;--bar-bottom:#b3c0ee;--npc:#2440c4;--vend:#c42a62;--vend-soft:#fde4ee;--chat-bg:rgba(18,22,38,.82);--chat-green:#8ff08a;--btn:#e6eaf7;--btn-edge:#6b78a8;--pixel:'DotGothic16','MS Gothic',monospace;--text:'Nanum Gothic','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;--radius:4px} .ds-signs{display:flex;gap:.6rem;flex-wrap:wrap;padding:1rem;background:var(--stone)} .ds-sign{display:inline-flex;align-items:center;gap:.45em;padding:.3rem .6rem .3rem .45rem;font:400 .9375rem/1.2 var(--pixel);color:var(--ink);text-decoration:none;white-space:nowrap;background:var(--paper);border:1px solid var(--win-frame);border-radius:3px;transition:background-color .15s,color .15s;animation:ds-bob 3.6s ease-in-out infinite} .ds-sign svg{color:var(--vend)} .ds-sign:hover{background:var(--vend-soft)} .ds-sign:focus-visible{outline:2px solid var(--vend);outline-offset:2px} .ds-sign--pink{background:var(--vend);color:#fff;border-color:#8e1743;animation-delay:-1.3s} .ds-sign--pink svg{color:#fff} .ds-sign--pink:hover{background:#a8204f} @keyframes ds-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}} @media (prefers-reduced-motion:reduce){.ds-sign{animation:none}}"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Form field inside the NPC dialog: label above, hint below.",
+      "html": "<div class=\"ds-field\"><label class=\"ds-label\" for=\"ds-u\">Usuario</label><input class=\"ds-input\" id=\"ds-u\" placeholder=\"\"><p class=\"ds-hint\">De 4 a 23 letras, números o _</p></div>",
+      "css": ":host{--stone:#a3a8b5;--ink:#1b2134;--ink-soft:#3c4560;--paper:#fff;--win-frame:#44538a;--bar-top:#dde3fb;--bar-bottom:#b3c0ee;--npc:#2440c4;--vend:#c42a62;--vend-soft:#fde4ee;--chat-bg:rgba(18,22,38,.82);--chat-green:#8ff08a;--btn:#e6eaf7;--btn-edge:#6b78a8;--pixel:'DotGothic16','MS Gothic',monospace;--text:'Nanum Gothic','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;--radius:4px} .ds-field{display:grid;gap:.25rem;max-width:20rem} .ds-label{font:700 .875rem/1.2 var(--text);color:var(--ink-soft)} .ds-input{padding:.5rem .6rem;font:400 1rem/1.3 var(--text);color:var(--ink);background:#f4f6fd;border:1px solid #9aa5cc;border-radius:3px} .ds-input:hover{border-color:var(--win-frame)} .ds-input:focus-visible{outline:2px solid var(--npc);outline-offset:0;background:#fff} .ds-input[aria-invalid=true]{border-color:var(--vend);background:var(--vend-soft)} .ds-hint{margin:0;font:400 .8125rem/1.4 var(--text);color:var(--ink-soft)}"
+    },
+    {
+      "name": "Client Menu Nav",
+      "kind": "nav",
+      "refersTo": "window",
+      "description": "Slim client window as site navigation: title bar with the server name, pixel links beside it.",
+      "html": "<nav class=\"ds-win ds-menu\"><p class=\"ds-win-bar\">Ragnarok Forever</p><a href=\"#\">Rates</a><a href=\"#\">Clases</a><a href=\"#\">Cómo empezar</a><a href=\"#\">Descargar</a></nav>",
+      "css": ":host{--stone:#a3a8b5;--ink:#1b2134;--ink-soft:#3c4560;--paper:#fff;--win-frame:#44538a;--bar-top:#dde3fb;--bar-bottom:#b3c0ee;--npc:#2440c4;--vend:#c42a62;--vend-soft:#fde4ee;--chat-bg:rgba(18,22,38,.82);--chat-green:#8ff08a;--btn:#e6eaf7;--btn-edge:#6b78a8;--pixel:'DotGothic16','MS Gothic',monospace;--text:'Nanum Gothic','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;--radius:4px} .ds-win{background:var(--paper,#fff);border:1px solid var(--win-frame,#44538a);border-radius:var(--radius,4px);color:var(--ink,#1b2134)} .ds-win-bar{margin:0;padding:.3rem .7rem .25rem;font:400 .9375rem/1.3 var(--pixel);letter-spacing:.02em;background:linear-gradient(var(--bar-top),var(--bar-bottom));border-bottom:1px solid var(--win-frame);border-radius:var(--radius) var(--radius) 0 0} .ds-menu{display:inline-flex;align-items:stretch} .ds-menu .ds-win-bar{display:flex;align-items:center;border-bottom:0;border-right:1px solid var(--win-frame);border-radius:var(--radius) 0 0 var(--radius)} .ds-menu a{display:block;padding:.45rem .7rem;font:400 .875rem/1.3 var(--pixel);color:var(--ink);text-decoration:none} .ds-menu a:hover{color:var(--npc);text-decoration:underline} .ds-menu a:focus-visible{outline:2px solid var(--vend);outline-offset:2px}"
+    },
+    {
+      "name": "NPC Dialog",
+      "kind": "custom",
+      "refersTo": "window",
+      "description": "A client window that speaks: bracketed NPC name, typed dialog line, menu of chevron options.",
+      "html": "<div class=\"ds-win\" style=\"max-width:24rem\"><p class=\"ds-win-bar\">Kafra</p><div class=\"ds-npc\"><p class=\"ds-npc-name\">[Kafra Forever]</p><p class=\"ds-npc-line\">¡Bienvenido a Ragnarok Forever! ¿En qué puedo ayudarte?</p><ul class=\"ds-npc-menu\"><li><a href=\"#\"><svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M9 6l6 6-6 6\"/></svg>Descargar cliente</a></li><li><a href=\"#\"><svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M9 6l6 6-6 6\"/></svg>Ver los rates</a></li></ul></div></div>",
+      "css": ":host{--stone:#a3a8b5;--ink:#1b2134;--ink-soft:#3c4560;--paper:#fff;--win-frame:#44538a;--bar-top:#dde3fb;--bar-bottom:#b3c0ee;--npc:#2440c4;--vend:#c42a62;--vend-soft:#fde4ee;--chat-bg:rgba(18,22,38,.82);--chat-green:#8ff08a;--btn:#e6eaf7;--btn-edge:#6b78a8;--pixel:'DotGothic16','MS Gothic',monospace;--text:'Nanum Gothic','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;--radius:4px} .ds-win{background:var(--paper,#fff);border:1px solid var(--win-frame,#44538a);border-radius:var(--radius,4px);color:var(--ink,#1b2134)} .ds-win-bar{margin:0;padding:.3rem .7rem .25rem;font:400 .9375rem/1.3 var(--pixel);letter-spacing:.02em;background:linear-gradient(var(--bar-top),var(--bar-bottom));border-bottom:1px solid var(--win-frame);border-radius:var(--radius) var(--radius) 0 0} .ds-npc{padding:1rem 1.1rem 1.15rem} .ds-npc-name{margin:0 0 .35rem;font:400 1rem/1.3 var(--pixel);color:var(--npc)} .ds-npc-line{margin:0;font:400 .975rem/1.6 var(--text);color:var(--ink)} .ds-npc-menu{margin:.9rem 0 0;padding:.7rem 0 0;list-style:none;border-top:1px dashed #b7c0e2} .ds-npc-menu a{display:inline-flex;align-items:center;gap:.25rem;font:400 1rem/1.4 var(--pixel);color:var(--npc);text-decoration:none} .ds-npc-menu svg{color:var(--ink-soft)} .ds-npc-menu a:hover{color:var(--vend);text-decoration:underline} .ds-npc-menu a:focus-visible{outline:2px solid var(--vend);outline-offset:2px}"
+    },
+    {
+      "name": "Chat Box",
+      "kind": "custom",
+      "refersTo": "chat-box",
+      "description": "Guide lines as client chat: green speaker names, gold system line.",
+      "html": "<div class=\"ds-chat\"><p><span class=\"ds-who\">[Guía]</span> Paso 1: crea tu cuenta con la <a href=\"#\">Kafra de la plaza</a>.</p><p class=\"ds-sys\">Te esperamos en Prontera.</p></div>",
+      "css": ":host{--stone:#a3a8b5;--ink:#1b2134;--ink-soft:#3c4560;--paper:#fff;--win-frame:#44538a;--bar-top:#dde3fb;--bar-bottom:#b3c0ee;--npc:#2440c4;--vend:#c42a62;--vend-soft:#fde4ee;--chat-bg:rgba(18,22,38,.82);--chat-green:#8ff08a;--btn:#e6eaf7;--btn-edge:#6b78a8;--pixel:'DotGothic16','MS Gothic',monospace;--text:'Nanum Gothic','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;--radius:4px} .ds-chat{padding:1rem 1.25rem;font:400 1rem/1.7 var(--pixel);color:#fff;background:var(--chat-bg);border-radius:var(--radius);max-width:46rem} .ds-chat p{margin:0} .ds-who{color:var(--chat-green)} .ds-chat a{color:#b9c7ff} .ds-chat a:hover{color:#fff} .ds-chat a:focus-visible{outline:2px solid var(--vend);outline-offset:2px} .ds-sys{color:#ffd36b;margin-top:.4rem}"
+    },
+    {
+      "name": "Name Tag Heading",
+      "kind": "custom",
+      "refersTo": "headline",
+      "description": "Section heading as an outlined character name tag, set directly on stone.",
+      "html": "<div class=\"ds-ground\"><h2 class=\"ds-tag\">Rates del servidor</h2></div>",
+      "css": ":host{--stone:#a3a8b5;--ink:#1b2134;--ink-soft:#3c4560;--paper:#fff;--win-frame:#44538a;--bar-top:#dde3fb;--bar-bottom:#b3c0ee;--npc:#2440c4;--vend:#c42a62;--vend-soft:#fde4ee;--chat-bg:rgba(18,22,38,.82);--chat-green:#8ff08a;--btn:#e6eaf7;--btn-edge:#6b78a8;--pixel:'DotGothic16','MS Gothic',monospace;--text:'Nanum Gothic','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;--radius:4px} .ds-ground{padding:1rem;background:var(--stone)} .ds-tag{margin:0;font:400 clamp(1.75rem,4vw,2.75rem)/1.1 var(--pixel);color:#fff;-webkit-text-stroke:.12em var(--ink);paint-order:stroke fill}"
+    },
+    {
+      "name": "Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Inline pink label inside a window body.",
+      "html": "<span class=\"ds-chip\">Pre-renewal</span>",
+      "css": ":host{--stone:#a3a8b5;--ink:#1b2134;--ink-soft:#3c4560;--paper:#fff;--win-frame:#44538a;--bar-top:#dde3fb;--bar-bottom:#b3c0ee;--npc:#2440c4;--vend:#c42a62;--vend-soft:#fde4ee;--chat-bg:rgba(18,22,38,.82);--chat-green:#8ff08a;--btn:#e6eaf7;--btn-edge:#6b78a8;--pixel:'DotGothic16','MS Gothic',monospace;--text:'Nanum Gothic','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;--radius:4px} .ds-chip{display:inline-block;padding:.1rem .45rem;font:400 .875rem/1.4 var(--pixel);color:#fff;background:var(--vend);border-radius:2px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Prontera Evening Plaza",
+    "overview": "The page is a place, not a brochure: a cool grey isometric cobble plaza with evening light falling over its far side, and on top of it the 2002 client's own interface. Facts float above the stones as merchant vending signboards; the visitor signs up by talking to a Kafra NPC in a client dialog window; the guide reads as lines in the chat box. Every piece of chrome is something a classic player has already clicked a thousand times.\n\nDensity is low and scattered on the first viewport (signs at varied heights over open stone) and orderly below it, where content sits in client windows that alternate left and right down the plaza. The material is flat and small-scale: white windows, hairline navy frames, a pale periwinkle gradient title bar, small rounded grey-blue buttons. Depth comes from the ground, the light and the overlap of windows on stone, never from drop shadows on the UI.\n\nThe world refuses the private-server default: no dark epic hero, no gold serif, no giant character render, no row of rate cards.",
+    "keyCharacteristics": [
+      "Authored isometric cobble tile as the only background, under an evening gradient on the first viewport.",
+      "White client windows with a 1px navy frame and a periwinkle gradient title bar.",
+      "Pixel face (DotGothic16) for every in-game voice; Nanum Gothic for running text.",
+      "Three game accents with fixed jobs: NPC blue, vending pink, chat green.",
+      "Outlined white name tags as headings.",
+      "Idle bob on floating signboards; NPC text types out once."
+    ],
+    "rules": [
+      {
+        "name": "The Client Colour Code Rule",
+        "body": "Each accent keeps the job it has in the game: blue for NPCs and actions, pink for vending and offers, green for chat speakers. Never swap them for decoration.",
+        "section": "colors"
+      },
+      {
+        "name": "The Night Panel Rule",
+        "body": "White running text over the plaza always sits on a Chat Night panel; the stone itself is too light (white on stone is 2.4:1).",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Voices Rule",
+        "body": "If the game would say it, it is DotGothic16; if the website explains it, it is Nanum Gothic. Never set paragraphs in the pixel face outside the chat box.",
+        "section": "typography"
+      },
+      {
+        "name": "The Name Tag Rule",
+        "body": "Headings on the plaza are white text with a Night Ink stroke (`-webkit-text-stroke` plus `paint-order: stroke fill`), like a character name over a sprite. They sit directly on stone, never in a box.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat Client Rule",
+        "body": "Interface chrome is framed, not lifted: a 1px Window Frame Navy border does the work a shadow would. Only things standing on the ground cast a shadow, and only onto the ground.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do put every new block of content inside a client window or the chat box, framed in 1px Window Frame Navy with a periwinkle title bar.",
+      "Do keep the accents on their game jobs: NPC Name Blue for actions and NPC names, Vending Pink for offers and numerals, Chat Green for chat speakers.",
+      "Do head plaza sections with outlined white name tags in DotGothic16.",
+      "Do use the cobble tile (220px by 110px) as the only page background.",
+      "Do place white text on the plaza only over a Chat Night panel.",
+      "Do stop the signboard bob and NPC typing under `prefers-reduced-motion`."
+    ],
+    "donts": [
+      "Don't add drop shadows to windows, buttons or signboards; only grounded objects cast shadows.",
+      "Don't use a dark epic hero, gold serif type, a large character render, or a row of rate cards.",
+      "Don't set paragraphs in DotGothic16 outside the chat box.",
+      "Don't show invented player counts, uptime, launch dates or reviews on signboards or anywhere else.",
+      "Don't feature more than one signboard in solid Vending Pink."
+    ]
+  }
+}
