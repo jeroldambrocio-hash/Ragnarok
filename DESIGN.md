@@ -152,9 +152,9 @@ components:
 
 **Creative North Star: "The Eve of the Siege"**
 
-The site is a night hill facing a lit castle under siege. Everything else is quiet so that scene can speak: a near-black charcoal ground, graphite planes used sparingly, warm off-white text, and two disciplined accents. Emperium gold marks what the visitor should do or remember (the primary action, key numerals, focus, the selected tab). Banner crimson belongs to the war and to live state: the WoE band, its countdown rules, castle dividers, the offline dot, invalid fields. Nothing else is coloured.
+The site opens on a castle balcony at golden hour where four adventurers wait to guide you. Everything else is quiet so that scene can speak: a near-black charcoal ground, graphite planes used sparingly, warm off-white text, and two disciplined accents. Emperium gold marks what the visitor should do or remember (the primary action, key numerals, focus, the selected tab). Banner crimson belongs to the war and to live state: the WoE band, its countdown rules, castle dividers, the offline dot, invalid fields. Nothing else is coloured.
 
-Structure is carried by hairlines and space, not by boxes. Content lists are rows divided by 1px rules at 10% off-white; sections breathe on a large clamped rhythm; containers are rare and quiet. Display type is Faculty Glyphic, a slightly carved fantasy serif that says Ragnarok without costume; everything a player reads to act is set in Onest, modern and plain. The cinematic layer lives in pixel-art layers and a light ember canvas behind the hero, with subtle pointer and scroll parallax that never touches legibility, and a band of original pixel-art job characters (Novice, Swordman, Mage, Merchant) who act as the hero's navigation. The hero scene is original pixel art too: a moonlit siege of a red-roofed castle, built as parallax layers by `tools/scene.py`; the WoE section carries a floating pixel Emperium. No official art is used.
+Structure is carried by hairlines and space, not by boxes. Content lists are rows divided by 1px rules at 10% off-white; sections breathe on a large clamped rhythm; containers are rare and quiet. Display type is Faculty Glyphic, a slightly carved fantasy serif that says Ragnarok without costume; everything a player reads to act is set in Onest, modern and plain. The cinematic layer is the plaza illustration at the foot of the hero, and the plaza illustration, whose four adventurers act as the hero's navigation; the WoE section carries a floating pixel Emperium. No official art is used.
 
 The system refuses the old private-server page (banners, bevelled buttons, dense tables of colour) and the generic dark gaming template (neon glows, glassy card grids, six feature tiles).
 
@@ -163,7 +163,7 @@ The system refuses the old private-server page (banners, bevelled buttons, dense
 - Gold is scarce and meaningful; crimson is reserved for war and live state.
 - Hairline-ruled rows instead of cards; generous clamped section spacing.
 - Faculty Glyphic for display and numerals, Onest for all functional text.
-- Pixel art for every illustration (scene layers at 480x270, Emperium, job sprite sheets at 44x72 frames), always rendered with `image-rendering: pixelated`; a single-stroke SVG icon set for UI. No official or third-party art.
+- One owner-supplied illustration carries the hero (the plaza: castle balcony, four adventurers under signs); the Emperium is pixel art rendered with `image-rendering: pixelated`; UI icons are a single-stroke SVG set. No official or third-party art.
 - Motion is small, eased (`cubic-bezier(0.16, 1, 0.3, 1)`), and fully disabled under reduced motion.
 - Illustrative data is always marked with a dashed sample badge; unavailable actions render as disabled buttons that say why.
 
@@ -222,13 +222,13 @@ A night palette of warm-neutral charcoals and parchment whites, lit by one gold 
 
 A single centred column, `max-width: calc(76rem + gutter * 2)` with a fluid gutter (`clamp(1.25rem, 5vw, 4.5rem)`). A fixed 4rem nav sits on top; anchor scrolling is offset by nav height plus 1rem. Sections open with `clamp(5rem, 11vw, 9rem)` of space above and a headline block `clamp(2rem, 4vw, 3rem)` from content. Inside sections, content splits into two asymmetric columns (roughly 1.2fr / 1fr, or 0.9fr / 1.4fr in WoE) with `clamp(2rem, 5vw, 5rem)` gaps, and collapses to one column at 900px. Rows inside lists run 1rem vertical padding between hairlines.
 
-The hero is full-bleed and at least `clamp(38rem, 100svh, 60rem)` tall: copy centre-left over a left-to-right shade, castle in the right third, four job characters standing on the foreground ridge in two bands either side of centre. In portrait or under 760px the castle takes the top band (about 52% height, masked out at the bottom), copy sits below it, the primary button goes full width, and the characters become a four-column dock with labels always visible. The nav collapses to a menu button at 860px; the mobile menu is an opaque drop panel of 1.0625rem links divided by hairlines.
+The hero is content-height: title on the left and tagline, meta and actions on the right (stacked under 900px), then the plaza illustration full width at its own ratio. Under 760px the primary button goes full width and the plaza becomes a sideways scroller 1000px wide with snap points. The nav collapses to a menu button at 860px; the mobile menu is an opaque drop panel of 1.0625rem links divided by hairlines.
 
 Breakpoints in use: 560px (single-column forms and lists, full-width tabs), 760px (portrait hero, footer stack), 860px (nav), 900px (two-column sections collapse), 1100px (larger characters).
 
 ## Elevation & Depth
 
-Flat and tonal. Depth comes from the night ground stepping to graphite, from hairlines, and from the hero's layered SVG with parallax; it does not come from shadows on surfaces. The one structural shadow is a soft warm under-glow beneath the gold primary button. The scrolled nav uses a translucent night fill with backdrop blur. Focus and state are drawn with rings and outlines, not lifts.
+Flat and tonal. Depth comes from the night ground stepping to graphite, from hairlines, and from the plaza illustration; it does not come from shadows on surfaces. The one structural shadow is a soft warm under-glow beneath the gold primary button. The scrolled nav uses a translucent night fill with backdrop blur. Focus and state are drawn with rings and outlines, not lifts.
 
 ### Shadow Vocabulary
 - **Gold under-glow** (`box-shadow: 0 8px 24px -10px rgba(212, 176, 106, 0.55)`; hover `0 10px 28px -10px rgba(232, 204, 143, 0.7)`): primary button only.
@@ -238,7 +238,7 @@ Flat and tonal. Depth comes from the night ground stepping to graphite, from hai
 ### Named Rules
 **The Hairline Not Box Rule.** Separate content with 1px rules at `hairline` or `hairline-strong`. Reach for a filled container only for controls (inputs, tab track, segmented control) or one closing call to action.
 
-**The Scene Carries Depth Rule.** Atmospheric gradients, glows, smoke and embers live in the authored scene and the WoE band. UI surfaces stay flat.
+**The Scene Carries Depth Rule.** Atmospheric gradients, glows, smoke and embers live in the hero illustration and the WoE band. UI surfaces stay flat.
 
 ## Shapes
 
@@ -277,11 +277,11 @@ Calm, solid, and specific: one filled voice, one outlined, one textual.
 ### Tabs (Rankings)
 - A night-raised track with a hairline border; the selected tab is shown by a gold ink slab that slides and resizes between tabs (260ms ease-out) under gold-ink text. Tables beneath use uppercase faint column heads over a strong hairline, 1rem row padding, a 3% parchment row hover, display-face rank numbers, and a larger gold first place.
 
-### Job Guides (signature)
-Four original pixel-art characters, one per first job (Novice → Servidor, Swordman → WoE, Mage → Rankings, Merchant → Descargar), are the hero's navigation. Sheets come from `tools/sprites.py`: 44x72 frames, columns idle / breath / wave / cheer, rows head front / left / right, with head and body as separate layers like the game. They idle on a two-frame breath with staggered delays. With a fine pointer their head turns toward the cursor (front, left or right); when the cursor rests they glance around on their own. On hover they hop, wave, and get a soft gold glow, and their pill label goes to full opacity. On click they cheer and leap, and the page scrolls to the section after 300ms. Labels carry a gold line icon and uppercase Onest. All idle and hover motion stops under reduced motion.
+### Plaza Guides (signature)
+The hero ends in the plaza illustration, shown full width at its own 2170:725 ratio with edges feathered into the page. Its four adventurers and their signs (Servidor, WoE, Rankings, Descargar) are real links laid over the art in percentages, so they stay aligned at any width. On hover or focus the sign gets a gold ring and glow and a warm light pulses at the adventurer's feet; on click the light bursts and the page scrolls to the section after 280ms, moving focus to its heading. On phones the plaza keeps a readable size and scrolls sideways with snap points, one adventurer at a time, with a "Desliza" hint. Behind the title, the same art is blurred and darkened to set the colour of the page.
 
 ### Siege Scene (signature)
-The hero background is layered pixel art from `tools/scene.py` (dithered night sky with moon and stars, moonlit far mountains, a stone castle with red cone roofs, banners, burning walls and gate, siege ladders and smoke, a near slope with a trebuchet and torch war-bands, and a tiled ground ridge with an amber rim) plus an ember canvas (16 particles on mobile, 34 on desktop). Layers parallax with the pointer and with scroll by depth. A night shade on the left (or bottom in portrait) protects the copy. The WoE section echoes it with a crimson-washed band and dark castle silhouettes at its base.
+The hero has no separate background art: a blurred, darkened copy of the plaza sits behind the title and fades to Night before the content, so the illustration sets the palette without competing with the type.
 
 ## Do's and Don'ts
 

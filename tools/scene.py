@@ -474,10 +474,7 @@ def emperium():
 
 
 if __name__ == "__main__":
+    # The hero now uses the owner's plaza illustration; only the Emperium ships.
+    # The siege layers above stay available: call sky(), far(), castle(), mid(), ground().
     emperium().save("emperium.png")
-    sky().save("sky.png")
-    far().save("far.png")
-    castle().save("castle.png")
-    mid().save("mid.png")
-    ground().save("ground.png")
-    print("wrote", sorted(p.name for p in OUT.glob("*.png")))
+    print("wrote", OUT / "emperium.png")

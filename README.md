@@ -14,9 +14,9 @@ Los datos de ejemplo (estado, jugadores, rankings, horario de WoE) están en `sr
 
 ## Arte provisional
 
-El fondo de War of Emperium y el Emperium de la sección WoE son pixel art original generado con `python3 tools/scene.py`, en `public/scene/` (capas de 480x270 que se muestran ampliadas sin suavizado).
+La portada usa la ilustración de la plaza (`public/hero/plaza.webp`), creada por el dueño del servidor. Los cuatro personajes y sus carteles son enlaces reales colocados encima en porcentajes (`src/components/Hero.astro`, lista `spots`): si cambias la imagen, ajusta esas coordenadas.
 
-Los personajes del hero (Novice, Swordman, Mage y Merchant) son pixel art original generado con `python3 tools/sprites.py` (necesita Pillow), en `public/sprites/`. Cada hoja tiene fotogramas de 44x72: columnas reposo, respiración, saludo y celebración; filas cabeza de frente, mirando a la izquierda y a la derecha. Para cambiar un personaje, sustituye su hoja por otra con la misma cuadrícula.
+El Emperium de la sección WoE es pixel art generado con `python3 tools/scene.py` (necesita Pillow).
 
 Todo el arte de la web está hecho para este proyecto; no se usa arte oficial de Gravity.
 
