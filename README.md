@@ -14,6 +14,10 @@ Los datos de ejemplo (estado, jugadores, rankings, horario de WoE) están en `sr
 
 ## Arte provisional
 
-El fondo de War of Emperium (`src/components/WoeScene.astro`) y los Novices (`src/components/Novice.astro`) son ilustraciones SVG provisionales. Para usar sprites reales, pasa `sprite="/ruta.png"` a cada `<Novice>`.
+La portada usa la ilustración de la plaza (`public/hero/plaza.webp`), creada por el dueño del servidor. Los cuatro personajes y sus carteles son enlaces reales colocados encima en porcentajes (`src/components/Hero.astro`, lista `spots`): si cambias la imagen, ajusta esas coordenadas.
+
+El Emperium de la sección WoE es pixel art generado con `python3 tools/scene.py` (necesita Pillow).
+
+Todo el arte de la web está hecho para este proyecto; no se usa arte oficial de Gravity.
 
 Incluye la skill [impeccable](https://github.com/pbakaus/impeccable) (Apache 2.0) en `.claude/skills/impeccable`.

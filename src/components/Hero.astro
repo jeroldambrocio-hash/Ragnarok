@@ -1,24 +1,31 @@
 ---
-import WoeScene from "./WoeScene.astro";
-import Novice from "./Novice.astro";
+/**
+ * Hero: title and calls to action over the plaza illustration.
+ *
+ * The plaza (public/hero/plaza.webp) is the owner's own illustration: a castle
+ * balcony with four adventurers under signs. Each adventurer and sign is a
+ * real link, laid over the art in percentages so it stays aligned at any width.
+ * To change the art, replace the image and adjust the `spots` coordinates.
+ */
 import Button from "./Button.astro";
+import Icon from "./Icon.astro";
 import { config } from "../config";
 
-const left = [
-  { href: "#servidor", label: "Servidor", icon: "server", hair: "#6b3f22", delay: 0, facing: "right" as const },
-  { href: "#woe", label: "WoE", icon: "castle", hair: "#1f1a1c", delay: -1.4, facing: "right" as const },
-];
-const right = [
-  { href: "#rankings", label: "Rankings", icon: "trophy", hair: "#b8863b", delay: -0.7, facing: "left" as const },
-  { href: "#descargar", label: "Descargar", icon: "download", hair: "#8c3a2a", delay: -2.1, facing: "left" as const },
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+// Positions as % of the image: x/w span the sign, the link runs from the sign down to the feet.
+const spots = [
+  { href: "#servidor", label: "Servidor", icon: "server", x: 17.0, w: 14.3 },
+  { href: "#woe", label: "WoE", icon: "castle", x: 35.5, w: 12.7 },
+  { href: "#rankings", label: "Rankings", icon: "trophy", x: 51.7, w: 13.5 },
+  { href: "#descargar", label: "Descargar", icon: "download", x: 69.0, w: 13.9 },
 ];
 const discordHref = config.discordUrl || "#comunidad";
 ---
 <section class="hero" id="inicio" aria-labelledby="hero-title">
-  <WoeScene />
+  <div class="hero-bg" aria-hidden="true" style={`--plaza:url(${base}/hero/plaza-1280.webp)`}></div>
   <div class="hero-inner wrap">
-    <div class="hero-copy">
-      <h1 id="hero-title" class="hero-title"><span>Ragnarok</span><span>Forever</span></h1>
+    <h1 id="hero-title" class="hero-title"><span>Ragnarok</span><span>Forever</span></h1>
+    <div class="hero-side">
       <p class="hero-tag">El Ragnarok clásico. Para siempre.</p>
       <p class="hero-meta"><span>Pre-renewal</span><span aria-hidden="true">·</span><span>Rates 5x</span><span aria-hidden="true">·</span><span>War of Emperium</span></p>
       <div class="hero-actions">
@@ -28,97 +35,146 @@ const discordHref = config.discordUrl || "#comunidad";
       </div>
     </div>
   </div>
-  <nav class="hero-novices" aria-label="Explorar con los Novices">
-    <div class="band band--left">
-      {left.map((n) => <Novice {...n} />)}
+
+  <nav class="plaza" aria-label="Explorar la web">
+    <div class="plaza-scroll" data-plaza-scroll>
+      <div class="plaza-stage">
+        <img
+          src={`${base}/hero/plaza.webp`}
+          srcset={`${base}/hero/plaza-1280.webp 1280w, ${base}/hero/plaza.webp 2170w`}
+          sizes="(max-width: 760px) 1000px, 100vw"
+          width="2170" height="725" alt="" fetchpriority="high" decoding="async" />
+        {spots.map((s) => (
+          <a class="spot" href={s.href} data-spot style={`--x:${s.x}%;--w:${s.w}%`}>
+            <span class="spot-sign" aria-hidden="true"></span>
+            <span class="spot-glow" aria-hidden="true"></span>
+            <span class="spot-tip"><Icon name={s.icon} size={14} />{s.label}</span>
+          </a>
+        ))}
+      </div>
     </div>
-    <div class="band band--right">
-      {right.map((n) => <Novice {...n} />)}
-    </div>
+    <p class="plaza-hint" aria-hidden="true">Desliza para ver a los cuatro <Icon name="arrow" size={14} /></p>
   </nav>
 </section>
 
 <script>
-  import "../scripts/novices.ts";
+  import "../scripts/plaza.ts";
 </script>
 
 <style>
   .hero {
     position: relative;
-    min-height: 100vh;
-    min-height: clamp(38rem, 100svh, 60rem);
-    display: grid;
-    grid-template-rows: 1fr auto;
     isolation: isolate;
     overflow: hidden;
+    padding-top: calc(var(--nav-h) + clamp(1.5rem, 5vh, 3.5rem));
   }
-  .hero-inner {
-    position: relative; z-index: 1;
-    display: flex; align-items: center;
-    padding-top: calc(var(--nav-h) + clamp(2rem, 6vh, 4rem));
-    padding-bottom: 0;
+  /* The plaza itself, blurred and darkened, fills the space behind the title. */
+  .hero-bg {
+    position: absolute; inset: -40px -40px 0; z-index: -1;
+    background: var(--plaza) center 30% / cover no-repeat;
+    filter: blur(22px) saturate(1.1) brightness(0.32);
+    transform: scale(1.05);
   }
-  .hero-copy { max-width: 40rem; }
+  .hero::after {
+    content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+    background: linear-gradient(180deg, rgba(11, 12, 15, 0.55), rgba(11, 12, 15, 0) 30%, var(--bg) 72%);
+  }
 
+  .hero-inner {
+    display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    align-items: end; gap: 1.5rem 3rem;
+  }
   .hero-title {
     display: flex; flex-direction: column;
-    font: 400 clamp(3.4rem, 9vw, 6rem)/0.92 var(--display);
+    font: 400 clamp(3.2rem, 8vw, 5.75rem)/0.92 var(--display);
     letter-spacing: 0.02em;
     text-transform: uppercase;
   }
   .hero-title span:last-child { color: var(--gold); padding-left: 0.08em; }
-
-  .hero-tag {
-    margin-top: 1.5rem;
-    font-size: clamp(1.15rem, 2vw, 1.375rem);
-    color: var(--text);
-  }
+  .hero-side { padding-bottom: 0.4rem; }
+  .hero-tag { font-size: clamp(1.15rem, 2vw, 1.375rem); color: var(--text); }
   .hero-meta {
     display: flex; flex-wrap: wrap; gap: 0.6rem;
-    margin-top: 0.6rem;
+    margin-top: 0.5rem;
     font: 500 0.8125rem/1.4 var(--sans);
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--text-2);
   }
-  .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; margin-top: 2.25rem; }
+  .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; margin-top: 1.5rem; }
 
-  .hero-novices {
-    position: relative; z-index: 2;
-    display: flex; justify-content: center; align-items: flex-end;
-    gap: clamp(2rem, 9vw, 10rem);
-    width: 100%;
-    max-width: calc(var(--max) + var(--gutter) * 2);
-    margin-inline: auto;
-    padding: 0 var(--gutter) clamp(0.75rem, 3vh, 2rem);
+  .plaza { margin-top: clamp(1.5rem, 4vh, 2.75rem); }
+  .plaza-scroll { overflow: hidden; }
+  .plaza-stage {
+    position: relative;
+    width: 100%; max-width: 2170px; margin-inline: auto;
+    aspect-ratio: 2170 / 725;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent), linear-gradient(180deg, transparent, #000 10%, #000 86%, transparent);
+    -webkit-mask-composite: source-in;
+    mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent), linear-gradient(180deg, transparent, #000 10%, #000 86%, transparent);
+    mask-composite: intersect;
   }
-  .band { display: flex; gap: clamp(0.5rem, 2vw, 1.75rem); align-items: flex-end; }
+  .plaza-stage img { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; }
 
-  @media (min-width: 1100px) {
-    .hero-novices :global(.novice) { --nv-w: 104px; }
+  .spot {
+    position: absolute;
+    left: var(--x); width: var(--w);
+    top: 23%; height: 55%;
+    border-radius: 12px;
+    -webkit-tap-highlight-color: transparent;
   }
-  /* Portrait: castle in the top band (see WoeScene), copy below it. */
-  @media (max-width: 760px), (max-aspect-ratio: 1/1) {
-    .hero-inner { align-items: flex-end; padding-top: 44svh; padding-bottom: 2.5rem; }
+  .spot-sign {
+    position: absolute; left: 0; right: 0; top: 2.5%; height: 18%;
+    border-radius: 10px;
+    transition: box-shadow 220ms var(--ease-out), background-color 220ms;
   }
+  .spot-glow {
+    position: absolute; left: 50%; bottom: 0; width: 70%; height: 16%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background: radial-gradient(closest-side, rgba(255, 214, 130, 0.75), rgba(255, 190, 90, 0.25) 60%, transparent);
+    opacity: 0;
+    transition: opacity 260ms;
+    mix-blend-mode: screen;
+  }
+  .spot-tip { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .spot-tip :global(svg) { display: none; }
+
+  @media (hover: hover) {
+    .spot:hover .spot-sign { box-shadow: 0 0 0 2px var(--gold), 0 0 28px rgba(212, 176, 106, 0.55); background: rgba(255, 236, 190, 0.08); }
+    .spot:hover .spot-glow { opacity: 1; animation: spot-pulse 1.6s ease-in-out infinite; }
+  }
+  .spot:focus-visible { outline: none; }
+  .spot:focus-visible .spot-sign { box-shadow: 0 0 0 3px var(--gold), 0 0 28px rgba(212, 176, 106, 0.55); }
+  .spot:focus-visible .spot-glow { opacity: 1; }
+  .spot.is-go .spot-glow { opacity: 1; animation: spot-go 500ms var(--ease-out); }
+  @keyframes spot-pulse { 0%, 100% { transform: translateX(-50%) scale(1); } 50% { transform: translateX(-50%) scale(1.12); } }
+  @keyframes spot-go { 0% { transform: translateX(-50%) scale(0.8); } 60% { transform: translateX(-50%) scale(1.5); } 100% { transform: translateX(-50%) scale(1); } }
+
+  .plaza-hint { display: none; }
+
+  @media (max-width: 900px) {
+    .hero-inner { grid-template-columns: 1fr; }
+  }
+  /* Phones: the plaza keeps a readable size and scrolls sideways, one adventurer at a time. */
   @media (max-width: 760px) {
-    .hero-inner { padding-top: 40svh; padding-bottom: 0.5rem; }
-    .hero-actions { gap: 0.6rem; }
     .hero-actions :global(.btn--primary) { flex: 1 1 100%; }
     .hero-actions :global(.btn--secondary) { flex: 1 1 auto; }
-    .hero-novices {
-      display: grid; grid-template-columns: repeat(4, 1fr);
-      gap: 0.25rem;
-      padding-top: 1.5rem;
+    .plaza-scroll {
+      overflow-x: auto; overscroll-behavior-x: contain;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
     }
-    .band { display: contents; }
-    .hero-novices :global(.novice) { padding-inline: 0; }
-    .hero-novices :global(.novice) { --nv-w: 60px; }
-    .hero-novices :global(.novice-label) {
-      opacity: 1; transform: none; order: 2;
-      padding: 0.3rem 0.5rem; font-size: 0.6875rem; letter-spacing: 0.04em;
-      background: none; border-color: transparent;
+    .plaza-scroll::-webkit-scrollbar { display: none; }
+    .plaza-stage { width: 1000px; max-width: none; -webkit-mask-image: linear-gradient(180deg, transparent, #000 8%, #000 88%, transparent); mask-image: linear-gradient(180deg, transparent, #000 8%, #000 88%, transparent); }
+    .spot { scroll-snap-align: center; }
+    .spot .spot-glow { opacity: 0.55; }
+    .plaza-hint {
+      display: flex; align-items: center; justify-content: center; gap: 0.35rem;
+      margin: 0.75rem 0 0; font-size: 0.8125rem; color: var(--text-3);
     }
-    .hero-novices :global(.novice-label svg) { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .spot:hover .spot-glow, .spot.is-go .spot-glow { animation: none; }
   }
 </style>

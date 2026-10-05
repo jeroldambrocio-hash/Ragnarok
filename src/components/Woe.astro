@@ -2,6 +2,7 @@
 import SampleBadge from "./SampleBadge.astro";
 import Icon from "./Icon.astro";
 import { realms, schedule } from "../data/woe";
+const art = `${import.meta.env.BASE_URL.replace(/\/$/, "")}/scene/emperium.png`;
 const days = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
 ---
 <section id="woe" class="woe" aria-labelledby="woe-title">
@@ -14,10 +15,15 @@ const days = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "
     </svg>
   </div>
   <div class="wrap woe-inner">
-    <header class="woe-head">
-      <h2 id="woe-title">War of Emperium</h2>
-      <p class="woe-quote">Lucha por tu guild.<br />Conquista tu castillo.</p>
-    </header>
+    <div class="woe-top">
+      <header class="woe-head">
+        <h2 id="woe-title">War of Emperium</h2>
+        <p class="woe-quote">Lucha por tu guild.<br />Conquista tu castillo.</p>
+      </header>
+      <div class="woe-art" aria-hidden="true">
+        <img src={art} width="72" height="96" loading="lazy" decoding="async" alt="" />
+      </div>
+    </div>
 
     <div class="woe-grid">
       <div class="woe-next" data-woe data-schedule={JSON.stringify(schedule.sessions)}>
@@ -86,7 +92,16 @@ const days = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "
   .woe-bg { position: absolute; inset: auto 0 0 0; height: 60%; z-index: -1; opacity: 0.9; }
   .woe-bg svg { width: 100%; height: 100%; max-width: none; }
 
+  .woe-top { display: flex; justify-content: space-between; align-items: flex-end; gap: 2rem; }
   .woe-head { max-width: 40rem; }
+  .woe-art { flex: none; width: clamp(9rem, 15vw, 13.5rem); }
+  .woe-art img {
+    width: 100%; height: auto; image-rendering: pixelated;
+    filter: drop-shadow(0 0 28px rgba(242, 182, 62, 0.25));
+    animation: emp-float 5s ease-in-out infinite;
+  }
+  @keyframes emp-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+  @media (prefers-reduced-motion: reduce) { .woe-art img { animation: none; } }
   .woe-head h2 {
     font: 400 clamp(2.6rem, 7vw, 5rem)/0.95 var(--display);
     text-transform: uppercase;
@@ -134,5 +149,9 @@ const days = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "
   .owner { color: var(--text-3); font-size: 0.8125rem; }
 
   @media (max-width: 900px) { .woe-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 640px) {
+    .woe-top { align-items: flex-end; }
+    .woe-art { width: 6.5rem; }
+  }
   @media (max-width: 560px) { .realm-list { grid-template-columns: 1fr; } }
 </style>
