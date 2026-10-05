@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="80" viewBox="0 0 160 80">
+  <!-- Authored for Ragnarok Forever: isometric cobble tile, seamless 160x80 -->
+  <rect width="160" height="80" fill="#a3a8b5"/>
+  <g>
+    <path d="M40 0 L80 20 L40 40 L0 20 Z" fill="#aaafbb"/>
+    <path d="M120 0 L160 20 L120 40 L80 20 Z" fill="#a3a8b5"/>
+    <path d="M80 20 L120 40 L80 60 L40 40 Z" fill="#a7acb8"/>
+    <path d="M0 20 L40 40 L0 60 Z" fill="#a0a5b2"/>
+    <path d="M160 20 L160 60 L120 40 Z" fill="#a0a5b2"/>
+    <path d="M40 40 L80 60 L40 80 L0 60 Z" fill="#a9aebb"/>
+    <path d="M120 40 L160 60 L120 80 L80 60 Z" fill="#aaafbb"/>
+    <path d="M0 0 L40 0 L0 20 Z" fill="#a7acb8"/>
+    <path d="M40 0 L120 0 L80 20 Z" fill="#a4a9b6"/>
+    <path d="M0 60 L40 80 L0 80 Z" fill="#a7acb8"/>
+    <path d="M160 60 L160 80 L120 80 Z" fill="#a7acb8"/>
+    <path d="M80 60 L120 80 L40 80 Z" fill="#a4a9b6"/>
+    <path d="M160 0 L120 0 L160 20 Z" fill="#a7acb8"/>
+  </g>
+  <path d="M0 20 L40 0 M0 60 L120 0 M40 80 L160 20 M120 80 L160 60 M120 0 L160 20 M40 0 L160 60 M0 20 L120 80 M0 60 L40 80" stroke="#939aa9" stroke-width="2" stroke-linecap="square" fill="none"/>
+  <g fill="#c2c6d0" opacity=".4">
+    <path d="M30 12 L44 18 L36 21 Z"/><path d="M112 9 L124 14 L116 17 Z"/>
+    <path d="M72 32 L86 38 L78 41 Z"/><path d="M33 52 L45 57 L38 60 Z"/>
+    <path d="M114 52 L128 58 L120 61 Z"/>
+  </g>
+</svg>
